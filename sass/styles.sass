@@ -216,6 +216,7 @@ a, input, button, textarea, select
 
 .work-container
   width: 100%
+  overflow: hidden
 
 .work-piece
   position: relative
@@ -226,6 +227,12 @@ a, input, button, textarea, select
   margin: 3em auto 0
   list-style: none
   text-align: center
+  +translate3d(110%, 0, 0)
+  +transition(transform .3s ease)
+  &.active
+    +translate3d(0, 0, 0)
+  &.past
+    +translate3d(-110%, 0, 0)
   h3, p
     text-align: left
   p
