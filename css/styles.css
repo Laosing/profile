@@ -21,9 +21,12 @@
 .tac { text-align: center; }
 
 /* line 37, ../sass/partials/_helpers.sass */
+.hide-text { display: block; text-indent: 100%; white-space: nowrap; overflow: hidden; }
+
+/* line 41, ../sass/partials/_helpers.sass */
 .hidden { display: none !important; }
 
-/* line 40, ../sass/partials/_helpers.sass */
+/* line 44, ../sass/partials/_helpers.sass */
 .icon { font-family: "Material Design Iconic Font"; }
 
 /* line 7, ../sass/styles.sass */
@@ -36,93 +39,131 @@ html { box-sizing: border-box; font-size: 62.5%; }
 body { font-size: 16px; font-size: 1.6rem; font-family: "Lato", sans-serif; background: #FAFAFA; }
 
 /* line 19, ../sass/styles.sass */
+ul { margin: 0; padding: 0; }
+
+/* line 23, ../sass/styles.sass */
 a { text-decoration: none; color: #222; }
 /* line 24, ../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.1/stylesheets/compass/typography/links/_link-colors.scss */
 a:hover { color: #FF3C1F; }
-/* line 22, ../sass/styles.sass */
+/* line 26, ../sass/styles.sass */
 a:hover, a:focus { text-decoration: none; }
 
-/* line 25, ../sass/styles.sass */
+/* line 29, ../sass/styles.sass */
 a, input { -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; -webkit-transition: all 0.2s ease; transition: all 0.2s ease; }
 
-/* line 29, ../sass/styles.sass */
+/* line 33, ../sass/styles.sass */
 a:active, a:focus, input:active, input:focus, button:active, button:focus, textarea:active, textarea:focus, select:active, select:focus { -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; outline: none; }
 
-/* line 34, ../sass/styles.sass */
+/* line 38, ../sass/styles.sass */
 .top, .bottom { position: absolute; }
 
-/* line 38, ../sass/styles.sass */
+/* line 42, ../sass/styles.sass */
 .top { top: -1em; left: 0; }
 
-/* line 42, ../sass/styles.sass */
+/* line 46, ../sass/styles.sass */
 .bottom { bottom: -1.4em; right: 0; }
 
-/* line 46, ../sass/styles.sass */
+/* line 50, ../sass/styles.sass */
 .small { text-transform: uppercase; font-weight: normal; font-size: 11px; font-size: 1.1rem; color: #ccc; }
-/* line 51, ../sass/styles.sass */
+/* line 55, ../sass/styles.sass */
 .small strong { color: #fff; }
 
-/* line 54, ../sass/styles.sass */
+/* line 58, ../sass/styles.sass */
 .side { position: absolute; top: 0; right: 0; bottom: 0; width: 30%; background: #222; overflow-y: scroll; }
 
-/* line 63, ../sass/styles.sass */
+/* line 67, ../sass/styles.sass */
 .main { position: absolute; top: 0; bottom: 0; width: 100%; background: url("../img/3-dark.jpg") center center no-repeat; -moz-background-size: cover; -o-background-size: cover; -webkit-background-size: cover; background-size: cover; z-index: 20; -moz-transition: -moz-transform 0.2s ease; -o-transition: -o-transform 0.2s ease; -webkit-transition: -webkit-transform 0.2s ease; transition: transform 0.2s ease; -moz-box-shadow: 0 0 10px black; -webkit-box-shadow: 0 0 10px black; box-shadow: 0 0 10px black; overflow: hidden; }
-/* line 74, ../sass/styles.sass */
+/* line 78, ../sass/styles.sass */
 .main.active { -moz-transform: translate3d(-30%, 0, 0); -webkit-transform: translate3d(-30%, 0, 0); transform: translate3d(-30%, 0, 0); }
 
-/* line 77, ../sass/styles.sass */
-.work { position: absolute; top: 0; bottom: 0; width: 70%; background: rgba(0, 0, 0, 0.5); z-index: 21; -moz-transition: background 0.2s ease; -o-transition: background 0.2s ease; -webkit-transition: background 0.2s ease; transition: background 0.2s ease; }
+/* line 81, ../sass/styles.sass */
+.work { position: absolute; top: 0; bottom: 0; width: 70%; background: rgba(0, 0, 0, 0.5); z-index: 21; -moz-transition: background 0.2s ease; -o-transition: background 0.2s ease; -webkit-transition: background 0.2s ease; transition: background 0.2s ease; display: none; }
+/* line 90, ../sass/styles.sass */
+.work.active { display: block; }
 
-/* line 86, ../sass/styles.sass */
-.about { padding: 2em; color: #fff; text-align: center; width: 100%; max-width: 670px; margin: 15% auto 0; }
 /* line 93, ../sass/styles.sass */
+.about { padding: 2em; color: #fff; text-align: center; width: 100%; max-width: 670px; margin: 15% auto 0; }
+/* line 100, ../sass/styles.sass */
 .about div { position: relative; font-size: 48px; font-size: 4.8rem; font-weight: lighter; text-shadow: 0 0 10px #222; }
 
-/* line 99, ../sass/styles.sass */
+/* line 106, ../sass/styles.sass */
 .timeline { position: relative; width: 100%; margin: 0 auto; padding: 1em 0; list-style-type: none; }
 
-/* line 106, ../sass/styles.sass */
+/* line 113, ../sass/styles.sass */
 .timeline:before { position: absolute; left: 24px; top: 0; content: " "; display: block; width: 3px; height: 100%; margin-left: -3px; background: #090909; z-index: 5; }
 
-/* line 118, ../sass/styles.sass */
+/* line 125, ../sass/styles.sass */
 .timeline li { padding: 1em 0 1em 2em; }
-/* line 121, ../sass/styles.sass */
+/* line 128, ../sass/styles.sass */
 .timeline li:hover { background: #3c3c3c; }
 
-/* line 124, ../sass/styles.sass */
+/* line 131, ../sass/styles.sass */
 .timeline li:after { content: ""; display: block; height: 0; clear: both; visibility: hidden; }
 
-/* line 131, ../sass/styles.sass */
+/* line 138, ../sass/styles.sass */
 .direction-r { position: relative; width: 100%; float: right; }
 
-/* line 136, ../sass/styles.sass */
+/* line 143, ../sass/styles.sass */
 .flag-wrapper { position: relative; display: inline-block; text-align: center; }
 
-/* line 141, ../sass/styles.sass */
+/* line 148, ../sass/styles.sass */
 .flag { position: relative; display: inline; padding: 1em; border-radius: 5px; font-weight: 600; text-align: left; color: #fff; }
 
-/* line 150, ../sass/styles.sass */
+/* line 157, ../sass/styles.sass */
 .direction-l .flag:before, .direction-r .flag:before { position: absolute; top: 60%; right: -40px; content: " "; display: block; width: 12px; height: 12px; margin-top: -10px; background: #090909; border-radius: 10px; border: 1px solid #FF3C1F; -moz-box-shadow: 0 0 0 2px #090909; -webkit-box-shadow: 0 0 0 2px #090909; box-shadow: 0 0 0 2px #090909; z-index: 10; }
 
-/* line 166, ../sass/styles.sass */
+/* line 173, ../sass/styles.sass */
 .direction-r .flag:before { left: -16px; }
 
-/* line 169, ../sass/styles.sass */
+/* line 176, ../sass/styles.sass */
 .time-wrapper { display: inline; color: #fff; vertical-align: middle; }
 
-/* line 174, ../sass/styles.sass */
+/* line 181, ../sass/styles.sass */
 .direction-l .time-wrapper { float: left; }
 
-/* line 177, ../sass/styles.sass */
+/* line 184, ../sass/styles.sass */
 .direction-r .time-wrapper { float: right; }
 
-/* line 180, ../sass/styles.sass */
+/* line 187, ../sass/styles.sass */
 .desc { margin: 1em 1em 0; color: #fff; font-size: 13px; font-size: 1.3rem; font-style: italic; line-height: 1.5em; color: #ccc; }
 
-/* line 188, ../sass/styles.sass */
+/* line 195, ../sass/styles.sass */
 .button { display: inline-block; vertical-align: middle; *vertical-align: auto; *zoom: 1; *display: inline; padding: 14px 27px 14px 29px; white-space: nowrap; border-radius: 50px; text-align: center; cursor: pointer; font-weight: 500; line-height: 14px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; font-size: 14px; font-size: 1.4rem; background: #fff; }
-/* line 203, ../sass/styles.sass */
+/* line 210, ../sass/styles.sass */
 .button:hover { opacity: 0.8; color: #222; }
 
-/* line 207, ../sass/styles.sass */
+/* line 214, ../sass/styles.sass */
 .about .button { margin-top: 20%; }
+
+/* line 217, ../sass/styles.sass */
+.work-container { width: 100%; }
+
+/* line 220, ../sass/styles.sass */
+.work-piece { position: relative; width: 90%; max-width: 800px; background: #FAFAFA; padding: 1em; margin: 3em auto 0; list-style: none; text-align: center; }
+/* line 229, ../sass/styles.sass */
+.work-piece h3, .work-piece p { text-align: left; }
+/* line 231, ../sass/styles.sass */
+.work-piece p { margin-bottom: 2em; }
+/* line 233, ../sass/styles.sass */
+.work-piece img { width: 100%; }
+/* line 235, ../sass/styles.sass */
+.work-piece .button { border: 1px solid #ccc; }
+/* line 237, ../sass/styles.sass */
+.work-piece .button:hover { background: #FF3C1F; color: #fff; border: 1px solid #eb1e00; }
+
+/* line 242, ../sass/styles.sass */
+.close { position: absolute; right: 0; top: 0; background: #FAFAFA; }
+
+/* line 248, ../sass/styles.sass */
+.prev, .next { position: absolute; padding: 0; }
+
+/* line 252, ../sass/styles.sass */
+.prev { left: 1em; }
+
+/* line 255, ../sass/styles.sass */
+.next { right: 1em; }
+
+/* line 258, ../sass/styles.sass */
+.close, .prev, .next { width: 44px; height: 44px; display: block; bottom: 1em; }
+/* line 263, ../sass/styles.sass */
+.close:before, .prev:before, .next:before { line-height: 44px; }
