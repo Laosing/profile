@@ -1,16 +1,51 @@
-var AppView = Backbone.View.extend({
-  // el - stands for element. Every view has a element associate in with HTML
-  //      content will be rendered.
-  el: '#container',
-  // It's the first function called when this view it's instantiated.
-  initialize: function() {
-    this.render();
-  },
-  // $el - it's a cached jQuery object (el), in which you can use jQuery functions
-  //       to push content. Like the Hello World in this case.
-  render: function() {
-    this.$el.html("Hello World");
-  }
-});
+var Portfolio = function() {
 
-var appView = new AppView();
+  var self = this,
+      config = {
+        checkout: $('#checkout'),
+        main: $('.main')
+      };
+
+  this.init = function() {
+    config.checkout.click(function() {
+      config.main.toggleClass('active');
+    });
+
+    this.timeline();
+  }
+
+  this.timeline = function() {
+    var timeline = $('#timeline');
+
+    $.getJSON('/portfolio.json')
+      .done(function(data) {
+        $.each(data.work, function(key, value) {
+
+          $('#timeline').loadTemplate($('#timeline-template'), {
+            id: 'timeline' + key,
+            title: value.timeline.title,
+            desc: value.timeline.description
+          }, {append: true, afterInsert: function($ele) {
+            $ele.click(function() {
+              var el = this.id.match(/\d+/)[0];
+              console.log(+el);
+              $('#' + el).toggleClass('active');
+            })
+          }});
+
+          $('#work-container').loadTemplate($('#work-template'), {
+            id: key,
+            img: 'img/' + value.modal.image,
+            alt: value.modal.title,
+            title: value.modal.title,
+            desc: value.modal.description,
+            link: value.modal.link
+          }, {append: true});
+        });
+      });
+  }
+
+};
+
+var portfolio = new Portfolio();
+portfolio.init();
