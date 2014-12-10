@@ -85,10 +85,7 @@ a, input, button, textarea, select
   width: 70%
   background: rgba(black, .5)
   z-index: 21
-  +transition(background .2s ease)
-  //display: none
-  &.active
-    display: block
+  display: none
 
 .about
   padding: 2em
@@ -109,6 +106,8 @@ a, input, button, textarea, select
   margin: 0 auto
   padding: 1em 0
   list-style-type: none
+  li
+    cursor: pointer
 
 .timeline:before
   position: absolute
@@ -208,16 +207,15 @@ a, input, button, textarea, select
 
 .work-container
   width: 100%
-  position: absolute
+  position: relative
   padding: 2em
-  top: 0
-  bottom: 0
-  overflow: hidden
+  overflow-x: hidden
+  overflow-y: initial
 
 .work-piece
   position: absolute
   width: 90%
-  left: 0
+  left: 100%
   right: 0
   max-width: 800px
   background: $white-lighter
@@ -225,10 +223,7 @@ a, input, button, textarea, select
   margin: 0 auto 0
   list-style: none
   text-align: center
-  +translate3d(110%, 0, 0)
-  +transition(transform .3s ease)
-  &.active
-    +translate3d(0%, 0, 0)
+
   h3, p
     text-align: left
   p

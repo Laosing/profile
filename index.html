@@ -26,7 +26,7 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
   <h1 class="element-invisible">Andrew Rattana</h1>
-  <section class="main clearfix active">
+  <section class="main clearfix">
     <div class="about">
       <div><span class="top small">Hi, my name is <strong>Andrew Rattana</strong> &amp; I'm a</span>Designer, Developer, Creator <span class="bottom small">of all things awsome!</span></div>
       <a href="#" class="button" id="checkout">Checkout my stuff!</a>
@@ -34,41 +34,44 @@
   </section>
   <section class="work">
     <ul class="work-container" id="work-container">
-      <script type="text/html" id="work-template">
-        <li class="work-piece" data-id="id">
-          <a href="#" class="close md-close" title="Close"><span class="hide-text">Close</span></a>
-          <a href="#" class="next button md-arrow-forward" title="Next"><span class="hide-text">Next</span></a>
-          <a href="#" class="prev button md-arrow-back" title="Previous"><span class="hide-text">Previous</span></a>
-          <div class="work-info">
-            <img data-src="img" data-alt="alt">
-            <h3 data-content="title">Title of awesome work</h3>
-            <p data-content="desc">This is my awesome work!</p>
-            <a href="#" class="button" data-content="link">Check it out!</a>
-          </div>
-        </li>
-      </script>
+    <script id="work-template" type="text/x-handlebars-template">
+    {{#each work}}
+      <li class="work-piece">
+        <a href="#" class="close md-close" title="Close"><span class="hide-text">Close</span></a>
+        <a href="#" class="next button md-arrow-forward" title="Next"><span class="hide-text">Next</span></a>
+        <a href="#" class="prev button md-arrow-back" title="Previous"><span class="hide-text">Previous</span></a>
+        <div class="work-info">
+          <img src="img/{{modal.image}}" alt="{{modal.title}}">
+          <h3>{{modal.title}}</h3>
+          <p>{{modal.description}}</p>
+          <a href="http://{{modal.link}}" class="button">Check it out!</a>
+        </div>
+      </li>
+    {{/each}}
+    </script>
     </ul>
   </section>
   <section class="side clearfix">
     <ul class="timeline" id="timeline">
-      <script type="text/html" id="timeline-template">
-        <li data-id="id">
-          <div class="direction-r">
-            <h2 class="flag" data-content="title"></h2>
-            <div class="desc" data-content="desc"></div>
-          </div>
-        </li>
-      </script>
+    <script id="list-template" type="text/x-handlebars-template">
+    {{#each work}}
+      <li>
+        <div class="direction-r">
+          <h2 class="flag">{{timeline.title}}</h2>
+          <div class="desc">{{timeline.description}}</div>
+        </div>
+      </li>
+    {{/each}}
+    </script>
     </ul>
   </section>
-
-
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script>
   window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
   </script>
-  <script src="js/vendor/jquery.loadTemplate-1.4.5.min.js"></script>
+  <script src="js/vendor/handlebars.min.js"></script>
+  <script src="js/vendor/velocity.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
   
