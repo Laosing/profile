@@ -134,30 +134,30 @@ a:active, a:focus, input:active, input:focus, button:active, button:focus, texta
 
 /* line 215, ../sass/styles.sass */
 .work-piece { position: absolute; width: 90%; left: 100%; right: 0; max-width: 800px; background: #FAFAFA; padding: 1em; margin: 0 auto 0; list-style: none; text-align: center; }
-/* line 227, ../sass/styles.sass */
+/* line 226, ../sass/styles.sass */
 .work-piece h3, .work-piece p { text-align: left; }
-/* line 229, ../sass/styles.sass */
-.work-piece p { margin-bottom: 2em; }
-/* line 231, ../sass/styles.sass */
+/* line 228, ../sass/styles.sass */
+.work-piece p { margin-bottom: 4em; }
+/* line 230, ../sass/styles.sass */
 .work-piece img { width: 100%; }
-/* line 233, ../sass/styles.sass */
+/* line 232, ../sass/styles.sass */
 .work-piece .button { border: 1px solid #ccc; }
-/* line 235, ../sass/styles.sass */
+/* line 234, ../sass/styles.sass */
 .work-piece .button:hover { background: #FF3C1F; color: #fff; border: 1px solid #eb1e00; }
 
-/* line 240, ../sass/styles.sass */
+/* line 239, ../sass/styles.sass */
 .close { position: absolute; right: 1em; top: 0; background: #FAFAFA; z-index: 30; }
 
-/* line 247, ../sass/styles.sass */
+/* line 246, ../sass/styles.sass */
 .prev, .next { position: absolute; padding: 0; }
 
-/* line 251, ../sass/styles.sass */
+/* line 250, ../sass/styles.sass */
 .prev { left: 1em; }
 
-/* line 254, ../sass/styles.sass */
+/* line 253, ../sass/styles.sass */
 .next { right: 1em; }
 
-/* line 257, ../sass/styles.sass */
+/* line 256, ../sass/styles.sass */
 .close, .prev, .next { width: 44px; height: 44px; display: block; bottom: 1em; text-align: center; }
-/* line 263, ../sass/styles.sass */
+/* line 262, ../sass/styles.sass */
 .close:before, .prev:before, .next:before { line-height: 44px; }
