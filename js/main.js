@@ -4,7 +4,8 @@ var Portfolio = function() {
       checkout = $('#checkout'),
       main = $('.main'),
       work = $('.work'),
-      workContainer = $('#work-container');
+      workContainer = $('#work-container'),
+      close = $('.close');
 
   this.timelineArray = null;
   this.workArray = null;
@@ -15,20 +16,20 @@ var Portfolio = function() {
 
       main.velocity({
         left: '-30%'
-      }, 'fast', 'ease', function() {
-        work.velocity('fadeIn', 'fast');
+      }, 'normal', 'ease', function() {
+        work.velocity('fadeIn', 'normal');
       });
     });
 
-    // workContainer.click(function(event) {
-    //   event.preventDefault();
+    close.click(function(event) {
+      event.preventDefault();
 
-    //   work.velocity('fadeOut', 'fast', function() {
-    //     main.velocity({
-    //       left: ''
-    //     }, 'fast', 'ease');
-    //   });
-    // });
+      work.velocity('fadeOut', 'normal', function() {
+        main.velocity({
+          left: ''
+        }, 'normal', 'ease');
+      });
+    });
 
     this.setHtml();
   }
@@ -57,7 +58,8 @@ var Portfolio = function() {
   }
 
   this.setLogic = function() {
-    var self = this;
+    var self = this,
+        lastIndex = this.timelineArray.length - 1;
 
     this.timelineArray.each(function(index, value) {
       $(value).click(function() {
@@ -66,44 +68,88 @@ var Portfolio = function() {
         self.logic(el);
       });
     });
+
+    $('.next').click(function(event) {
+      event.preventDefault();
+
+      var el = $(this).parent(),
+          index = el.data('work'),
+          next = el.next();
+
+      if(index === self.workArray.length - 1) 
+        next = $('#work-container li[data-work="0"]');
+
+      self.next(next);
+    });
+
+    $('.prev').click(function(event) {
+      event.preventDefault();
+
+      var el = $(this).parent(),
+          index = el.data('work'),
+          prev = el.prev(),
+          last = self.timelineArray.length - 1;
+
+      if(index === 0)
+        prev = $('#work-container li[data-work="' + last + '"]');
+
+      self.prev(prev);
+    });
   }
 
   this.logic = function(el) {
     if(el.hasClass('active')) {
       return;
-    } else if($('.active').length) {
-      $('.active').velocity({
-        left: '-200%'
-      }, 'fast', 'ease', function() {
-        $('.active')
-          .removeAttr('style')
-          .removeClass('active');
-      });
-
-      el.velocity({
-        left: '0'
-      }, 'fast', 'ease', function() {
-        el.addClass('active');
-      });
+    } else if($('.active').length === 1) {
+      this.next(el);
     } else {
       this.show(el);
     }
   }
 
   this.show = function(el) {
+    el.addClass('active');
+
     el.velocity({
       left: '0'
-    }, 'fast', 'ease', function() {
-      el.addClass('active');
+    }, 'normal', 'ease');
+  }
+
+  this.hide = function(value, cb) {
+    $('.active').velocity({
+      left: value,
+      opacity: 0
+    }, 'normal', 'ease', function() {
+      $('.active')
+        .removeAttr('style')
+        .removeClass('active');
+
+      cb();
     });
   }
 
-  this.showNext = function(el) {
+  this.next = function(el) {
+    this.hide('-200%', function() {
+      el.addClass('active');
 
+      el.velocity({
+        left: '0'
+      }, 'normal', 'ease');
+    });
   }
 
-  this.showPrev = function(el) {
+  this.prev = function(el) {
+    this.hide('100%', function() {
+      el.addClass('active');
 
+      el
+        .velocity({
+          'left': '-200%',
+        }, 0)
+        .velocity({
+          left: '0',
+        }, 'normal', 'ease');
+    });
   }
 };
 

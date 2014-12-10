@@ -33,11 +33,11 @@
     </div>
   </section>
   <section class="work">
+    <a href="#" class="close md-close" title="Close"><span class="hide-text">Close</span></a>
     <ul class="work-container" id="work-container">
     <script id="work-template" type="text/x-handlebars-template">
     {{#each work}}
-      <li class="work-piece">
-        <a href="#" class="close md-close" title="Close"><span class="hide-text">Close</span></a>
+      <li class="work-piece" data-work="{{@index}}">
         <a href="#" class="next button md-arrow-forward" title="Next"><span class="hide-text">Next</span></a>
         <a href="#" class="prev button md-arrow-back" title="Previous"><span class="hide-text">Previous</span></a>
         <div class="work-info">

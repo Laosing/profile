@@ -141,8 +141,8 @@ a, input, button, textarea, select
 
 .flag
   position: relative
-  display: inline
-  padding: 1em
+  display: inline-block
+  padding: 0 1em
   border-radius: 5px
   font-weight: 600
   text-align: left
@@ -208,7 +208,7 @@ a, input, button, textarea, select
 .work-container
   width: 100%
   position: relative
-  padding: 2em
+  padding-top: 4em
   overflow-x: hidden
   overflow-y: initial
 
@@ -239,9 +239,10 @@ a, input, button, textarea, select
 
 .close
   position: absolute
-  right: 0
+  right: 1em
   top: 0
   background: $white-lighter
+  z-index: 30
 
 .prev, .next
   position: absolute
@@ -258,6 +259,7 @@ a, input, button, textarea, select
   height: 44px
   display: block
   bottom: 1em
+  text-align: center
   &:before
     line-height: 44px
 
