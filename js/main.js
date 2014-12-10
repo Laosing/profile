@@ -1,4 +1,5 @@
 var Portfolio = function() {
+  "use strict"
 
   var self = this,
       checkout = $('#checkout'),
@@ -39,7 +40,7 @@ var Portfolio = function() {
 
     $.getJSON('/portfolio.json')
       .done(function(data) {
-        var workSource = $('#work-template').html();
+        var workSource = $('#work-template').html(),
             workTemplate = Handlebars.compile(workSource);
 
         $('#work-container').html(workTemplate(data));
