@@ -12,6 +12,7 @@ var Portfolio = function() {
 
   this.timelineArray = null;
   this.workArray = null;
+  this.json = null;
 
   this.init = function() {
     this.setHtml();
@@ -55,10 +56,10 @@ var Portfolio = function() {
   }
 
   this.setHtml = function() {
-    var self = this;
-
     $.getJSON('portfolio.json')
       .done(function(data) {
+        self.json = data;
+
         var workSource = $('#work-template').html(),
             workTemplate = Handlebars.compile(workSource);
 
@@ -79,8 +80,7 @@ var Portfolio = function() {
   }
 
   this.setLogic = function() {
-    var self = this,
-        lastIndex = this.timelineArray.length - 1;
+    var lastIndex = this.timelineArray.length - 1;
 
     this.timelineArray.each(function(index, value) {
       $(value).click(function() {
@@ -119,8 +119,6 @@ var Portfolio = function() {
   }
 
   this.logic = function(el) {
-    var self = this;
-
     if(el.hasClass('active') || $('.velocity-animating').length) {
       return;
     } else if($('.active').length) {
@@ -135,9 +133,32 @@ var Portfolio = function() {
   this.show = function(el) {
     el.addClass('active');
 
-    el.velocity({
-      left: '0'
-    }, 'normal', 'ease');
+    this.loadImage(el, function() {
+      el.velocity({
+        left: '0'
+      }, 'normal', 'ease');
+    });
+  }
+
+  this.loadImage = function(el, cb) {
+    if(el.find('img').length && typeof cb === 'function') {
+      cb();
+      return;
+    }
+
+    var data = this.json.work[el.data('work')].modal;
+
+    var img = $('<img/>')
+      .attr('src', 'img/' + data.image)
+      .attr('alt', data.title)
+      .load(function() {
+        el
+          .find('.work-info')
+          .prepend($(this));
+
+        if(typeof cb === 'function')
+          cb();
+      });
   }
 
   this.hide = function(value, cb) {
@@ -149,31 +170,36 @@ var Portfolio = function() {
         .removeAttr('style')
         .removeClass('active');
 
-      cb();
+      if(typeof cb === 'function')
+        cb();
     });
   }
 
   this.next = function(el) {
-    this.hide('-200%', function() {
-      el.addClass('active');
+    this.loadImage(el, function() {
+      self.hide('-200%', function() {
+        el.addClass('active');
 
-      el.velocity({
-        left: '0'
-      }, 'normal', 'ease');
+        el.velocity({
+          left: '0'
+        }, 'normal', 'ease');
+      });
     });
   }
 
   this.prev = function(el) {
-    this.hide('100%', function() {
-      el.addClass('active');
+    this.loadImage(el, function() {
+      self.hide('100%', function() {
+        el.addClass('active');
 
-      el
-        .velocity({
-          'left': '-200%',
-        }, 0)
-        .velocity({
-          left: '0',
-        }, 'normal', 'ease');
+        el
+          .velocity({
+            'left': '-200%',
+          }, 0)
+          .velocity({
+            left: '0',
+          }, 'normal', 'ease');
+      });
     });
   }
 };
