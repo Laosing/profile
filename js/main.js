@@ -37,9 +37,10 @@ var Portfolio = function() {
         self.timelineArray.each(function(index) {
           $(this).velocity('fadeIn', {
             duration: 'normal',
-            delay: 200 * index
+            delay: 200 * index,
+            display: 'block'
           });
-        })
+        });
       });
     });
   }

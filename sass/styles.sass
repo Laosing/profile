@@ -4,6 +4,9 @@
 @import "partials/helpers"
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700)
 
+$break-mobile: max-width 600px
+$break-tablet: max-width 768px
+
 html
   box-sizing: border-box
   font-size: 62.5%
@@ -247,6 +250,7 @@ a, input, button, textarea, select
 .prev, .next
   position: absolute
   padding: 0
+  z-index: 10
   
 .prev
   left: 1em
@@ -262,6 +266,11 @@ a, input, button, textarea, select
   text-align: center
   &:before
     line-height: 44px
+
+.checklink
+  width: auto
+  +breakpoint($break-mobile)
+    width: 100%
 
 .load
   position: absolute
