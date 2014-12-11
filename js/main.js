@@ -2,13 +2,12 @@ var Portfolio = function() {
   "use strict";
 
   var self = this,
-      checkout = $('#checkout'),
-      main = $('.main'),
-      work = $('.work'),
-      workContainer = $('#work-container'),
-      close = $('.close'),
-      load = $('.load'),
-      helper = $('.helper');
+      _checkout = $('#checkout'),
+      _main = $('.main'),
+      _work = $('.work'),
+      _close = $('.close'),
+      _loader = $('.load'),
+      _helper = $('.helper');
 
   this.timelineArray = null;
   this.workArray = null;
@@ -17,13 +16,13 @@ var Portfolio = function() {
   this.init = function() {
     this.setHtml();
 
-    checkout.click(function(event) {
+    _checkout.click(function(event) {
       event.preventDefault();
 
       self.open();
     });
 
-    close.click(function(event) {
+    _close.click(function(event) {
       event.preventDefault();
 
       self.close();
@@ -31,10 +30,10 @@ var Portfolio = function() {
   }
 
   this.open = function() {
-    main.velocity({
+    _main.velocity({
       left: '-30%'
     }, 'normal', 'ease', function() {
-      work.velocity('fadeIn', 'normal', function() {
+      _work.velocity('fadeIn', 'normal', function() {
         self.timelineArray.each(function(index) {
           $(this).velocity('fadeIn', {
             duration: 'normal',
@@ -46,8 +45,8 @@ var Portfolio = function() {
   }
 
   this.close = function() {
-    work.velocity('fadeOut', 'normal', function() {
-      main.velocity({
+    _work.velocity('fadeOut', 'normal', function() {
+      _main.velocity({
         left: ''
       }, 'normal', 'ease', function() {
         self.timelineArray.hide();
@@ -124,7 +123,7 @@ var Portfolio = function() {
     } else if($('.active').length) {
       this.next(el);
     } else {
-      helper.fadeOut('fast', function() {
+      _helper.fadeOut('fast', function() {
         self.show(el);
       });
     }
@@ -146,6 +145,8 @@ var Portfolio = function() {
       return;
     }
 
+    _loader.fadeIn('fast');
+
     var data = this.json.work[el.data('work')].modal;
 
     var img = $('<img/>')
@@ -158,6 +159,8 @@ var Portfolio = function() {
 
         if(typeof cb === 'function')
           cb();
+
+        _loader.fadeOut();
       });
   }
 
