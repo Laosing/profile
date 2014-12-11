@@ -1,44 +1,63 @@
 var Portfolio = function() {
-  "use strict"
+  "use strict";
 
   var self = this,
       checkout = $('#checkout'),
       main = $('.main'),
       work = $('.work'),
       workContainer = $('#work-container'),
-      close = $('.close');
+      close = $('.close'),
+      load = $('.load'),
+      helper = $('.helper');
 
   this.timelineArray = null;
   this.workArray = null;
 
   this.init = function() {
+    this.setHtml();
+
     checkout.click(function(event) {
       event.preventDefault();
 
-      main.velocity({
-        left: '-30%'
-      }, 'normal', 'ease', function() {
-        work.velocity('fadeIn', 'normal');
-      });
+      self.open();
     });
 
     close.click(function(event) {
       event.preventDefault();
 
-      work.velocity('fadeOut', 'normal', function() {
-        main.velocity({
-          left: ''
-        }, 'normal', 'ease');
+      self.close();
+    });
+  }
+
+  this.open = function() {
+    main.velocity({
+      left: '-30%'
+    }, 'normal', 'ease', function() {
+      work.velocity('fadeIn', 'normal', function() {
+        self.timelineArray.each(function(index) {
+          $(this).velocity('fadeIn', {
+            duration: 'normal',
+            delay: 200 * index
+          });
+        })
       });
     });
+  }
 
-    this.setHtml();
+  this.close = function() {
+    work.velocity('fadeOut', 'normal', function() {
+      main.velocity({
+        left: ''
+      }, 'normal', 'ease', function() {
+        self.timelineArray.hide();
+      });
+    });
   }
 
   this.setHtml = function() {
     var self = this;
 
-    $.getJSON('/portfolio.json')
+    $.getJSON('portfolio.json')
       .done(function(data) {
         var workSource = $('#work-template').html(),
             workTemplate = Handlebars.compile(workSource);
@@ -54,6 +73,7 @@ var Portfolio = function() {
         self.timelineArray = $('#timeline li');
         self.workArray = $('#work-container li');
 
+        self.timelineArray.fadeOut();
         self.setLogic();
       });
   }
@@ -99,12 +119,16 @@ var Portfolio = function() {
   }
 
   this.logic = function(el) {
-    if(el.hasClass('active')) {
+    var self = this;
+
+    if(el.hasClass('active') || $('.velocity-animating').length) {
       return;
-    } else if($('.active').length === 1) {
+    } else if($('.active').length) {
       this.next(el);
     } else {
-      this.show(el);
+      helper.fadeOut('fast', function() {
+        self.show(el);
+      });
     }
   }
 
