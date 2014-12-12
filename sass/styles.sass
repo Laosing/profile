@@ -109,33 +109,31 @@ a, input, button, textarea, select
   margin: 0 auto
   padding: 1em 0
   list-style-type: none
+  &:before
+    position: absolute
+    left: 24px
+    top: 0
+    content: ' '
+    display: block
+    width: 3px
+    height: 100%
+    margin-left: -3px
+    background: $black-dark
+    z-index: 5
   li
+    padding: 1em 0 1em 2em
     cursor: pointer
-
-.timeline:before
-  position: absolute
-  left: 24px
-  top: 0
-  content: ' '
-  display: block
-  width: 3px
-  height: 100%
-  margin-left: -3px
-  background: $black-dark
-  z-index: 5
-
-.timeline li
-  padding: 1em 0 1em 2em
-  @extend .animate
-  &:hover
-    background: $black-light
-
-.timeline li:after
-  content: ""
-  display: block
-  height: 0
-  clear: both
-  visibility: hidden
+    @extend .animate
+    &:hover
+      background: $black-light 
+    &:after
+      content: ""
+      display: block
+      height: 0
+      clear: both
+      visibility: hidden
+    &.active
+      background: $black-dark
 
 .direction-r
   position: relative
@@ -152,32 +150,20 @@ a, input, button, textarea, select
   color: $white
   margin: 0
   +font-size(16)
-
-.direction-r .flag:before
-  position: absolute
-  top: 60%
-  right: -40px
-  content: ' '
-  display: block
-  width: 12px
-  height: 12px
-  margin-top: -10px
-  background: $black-dark
-  border-radius: 10px
-  border: 1px solid $primary
-  +box-shadow(0 0 0 2px $black-dark)
-  z-index: 10
-
-.direction-r .flag:before
-  left: -16px
-
-.time-wrapper
-  display: inline
-  color: $white
-  vertical-align: middle
-
-.direction-r .time-wrapper
-  float: right
+  &:before
+    position: absolute
+    top: 60%
+    left: -16px
+    content: ' '
+    display: block
+    width: 12px
+    height: 12px
+    margin-top: -10px
+    background: $black-dark
+    border-radius: 10px
+    border: 1px solid $primary
+    +box-shadow(0 0 0 2px $black-dark)
+    z-index: 10
 
 .desc
   margin: 1em 1em 0

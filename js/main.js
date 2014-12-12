@@ -74,7 +74,7 @@ var Portfolio = function() {
         self.timelineArray = $('#timeline li');
         self.workArray = $('#work-container li');
 
-        self.timelineArray.fadeOut();
+        self.timelineArray.hide();
         self.setLogic();
       });
   }
@@ -86,7 +86,7 @@ var Portfolio = function() {
       $(value).click(function() {
         var el = $(self.workArray[index]);
 
-        self.logic(el);
+        self.logic(el, $(this));
       });
     });
 
@@ -118,20 +118,21 @@ var Portfolio = function() {
     });
   }
 
-  this.logic = function(el) {
+  this.logic = function(el, timelineEl) {
     if(el.hasClass('active') || $('.velocity-animating').length) {
       return;
     } else if($('.active').length) {
-      this.next(el);
+      this.next(el, timelineEl);
     } else {
       _helper.fadeOut('fast', function() {
-        self.show(el);
+        self.show(el, timelineEl);
       });
     }
   }
 
-  this.show = function(el) {
+  this.show = function(el, timelineEl) {
     el.addClass('active');
+    timelineEl.addClass('active');
 
     this.loadImage(el, function() {
       el.velocity({
@@ -166,7 +167,7 @@ var Portfolio = function() {
   }
 
   this.hide = function(value, cb) {
-    $('.active').velocity({
+    $('.work-piece.active').velocity({
       left: value,
       opacity: 0
     }, 'normal', 'ease', function() {
@@ -179,10 +180,11 @@ var Portfolio = function() {
     });
   }
 
-  this.next = function(el) {
+  this.next = function(el, timelineEl) {
     this.loadImage(el, function() {
       self.hide('-200%', function() {
         el.addClass('active');
+        timelineEl.addClass('active');
 
         el.velocity({
           left: '0'
