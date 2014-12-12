@@ -2,40 +2,169 @@
   "work": [
     {
       "timeline": {
-        "title": "Freelance 1",
-        "description": "My current employment. Way better than the position before!"
+        "description": "Welcome to my site"
       },
       "modal": {
-        "image": "1.jpg",
-        "title": "Test 1",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores laborum, dignissimos quos repudiandae, <strong>obcaecati</strong> officia, sapiente rem ullam iure ipsa doloremque. Accusamus dignissimos explicabo, voluptatibus, adipisci quae sapiente et.",
+        "image": "3-dark.jpg",
+        "title": "Andrew Rattana",
+        "description": "Welcome to my site! I'm a web developer that specializes in a broad range of areas: from web design, to motion graphics, to pen and paper art. Last but not least I love programming (JavaScipt is awesome!), so also becoming a developer was only natural. Please enjoy my site and if you have any questions don't hesitate to send me a <a href='mailto:andrew.rattana@gmail.com'>message</a>.",
         "link": "",
         "lightbox": false
       }
     },
     {
       "timeline": {
-        "title": "Freelance 2",
-        "description": "My current employment. Way better than the position before!"
+        "description": "Offering only the best tech news and reviews!"
       },
       "modal": {
-        "image": "2.jpg",
-        "title": "Test 2",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores laborum, dignissimos quos repudiandae, obcaecati officia, sapiente rem ullam iure ipsa doloremque. Accusamus dignissimos explicabo, voluptatibus, adipisci quae sapiente et.",
-        "link": "img/2.jpg",
+        "image": "lighsing.png",
+        "title": "Lighsing Tech News",
+        "description": "Front end design and development of a self-made project of a tech news center.",
+        "link": "/work/Lighsing",
+        "lightbox": false
+      }
+    },
+    {
+      "timeline": {
+        "description": "After Effects animations with front end design!"
+      },
+      "modal": {
+        "image": "videojs.png",
+        "title": "AE Phone Animations",
+        "description": "Creating modern vector phone animations with After Effects and designing a minimal site platform for videos.",
+        "link": "work/VideoJS",
+        "lightbox": false
+      }
+    },
+    {
+      "timeline": {
+        "description": "A tournament management and hosting application microsite."
+      },
+      "modal": {
+        "image": "bracketsc2.png",
+        "title": "BracketSC2 Microsite",
+        "description": "BracketSC2 is a Starcraft 2 tournament management and hosting application that enables you to easily host tournaments without worrying about the techinical side of things.",
+        "link": "work/thesis_minisite",
+        "lightbox": false
+      }
+    },
+    {
+      "timeline": {
+        "description": "HTML5 Minimal todo list."
+      },
+      "modal": {
+        "image": "dragdrop.png",
+        "title": "Todo List Application",
+        "description": "A minimalistic todo list application that features drag and drop for setting priorities for your items.",
+        "link": "work/HTML5Tasks",
+        "lightbox": false
+      }
+    },
+    {
+      "timeline": {
+        "description": "Get the latest news, trends and happenings in music!"
+      },
+      "modal": {
+        "image": "musicsite.jpg",
+        "title": "MusicSky",
+        "description": "A concept website I designed for the latest trends and news in music, focusing on clean and modern design trends.",
+        "link": "img/musicsite-large.jpg",
         "lightbox": true
       }
     },
     {
       "timeline": {
-        "title": "Freelance 3",
-        "description": "My current employment. Way better than the position before!"
+        "description": "Attack of the retreating invisible cows!"
       },
       "modal": {
-        "image": "3.jpg",
-        "title": "Test 3",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores laborum, dignissimos quos repudiandae, obcaecati officia, sapiente rem ullam iure ipsa doloremque. Accusamus dignissimos explicabo, voluptatibus, adipisci quae sapiente et.",
-        "link": "www.google.com",
+        "image": "cows.jpg",
+        "title": "The Cow Warriors",
+        "description": "A logo I designed for my team of 4 in a fierce corporate battle royale. These were printed on t-shirts and the title remained as Attack of the Retreating Invisible Cows!",
+        "link": "img/cow-large.jpg",
+        "lightbox": true
+      }
+    },
+    {
+      "timeline": {
+        "description": "Theme: Radiating Colours"
+      },
+      "modal": {
+        "image": "book1.jpg",
+        "title": "Student Handbook 2012",
+        "description": "I made a design for the Student Handbook 2012 competition at my community college, unfortunately it ended in 2nd place.",
+        "link": "img/book1-large.jpg",
+        "lightbox": true
+      }
+    },
+    {
+      "timeline": {
+        "description": "Theme: Mobile Apps"
+      },
+      "modal": {
+        "image": "book2.jpg",
+        "title": "Student Handbook 2013",
+        "description": "I made a design for the Student Handbook 2013 competition at my community college, unfortunately it ended in 2nd place... again.",
+        "link": "img/book2-large.jpg",
+        "lightbox": true
+      }
+    },
+    {
+      "timeline": {
+        "description": "Theme: Game On"
+      },
+      "modal": {
+        "image": "book3.jpg",
+        "title": "Student Handbook 2014",
+        "description": "I made a design for the Student Handbook 2014 competition at my community college, unfortunately this one didn't place, looking back I think a warrior holding two giant axes probably wasn't a good idea...",
+        "link": "img/book3-large.jpg",
+        "lightbox": true
+      }
+    },
+    {
+      "timeline": {
+        "description": "A report cover page about user application data and statistics"
+      },
+      "modal": {
+        "image": "enduser.jpg",
+        "title": "End User Report",
+        "description": "The cover page for a report I designed for <a href='http://www.infotech.com'>Info-Tech Research Group</a> for corporations to measure how well they're users are managing applications",
+        "link": "img/enduser-large.jpg",
+        "lightbox": true
+      }
+    },
+    {
+      "timeline": {
+        "description": "The future of car HUDs?"
+      },
+      "modal": {
+        "image": "hud.png",
+        "title": "Car Dashboard HUD",
+        "description": "A concept design I created of a futuristic car's heads up display. Focusing heavily on sci-fi interfaces.",
+        "link": "",
+        "lightbox": false
+      }
+    },
+    {
+      "timeline": {
+        "description": "A modern and minimalistic music player."
+      },
+      "modal": {
+        "image": "music.jpg",
+        "title": "Music Player",
+        "description": "A concept design I created of a music player application.",
+        "link": "",
+        "lightbox": false
+      }
+    },
+    {
+      "timeline": {
+        "description": "A super minimalistic media player."
+      },
+      "modal": {
+        "image": "movie.jpg",
+        "title": "Media Player",
+        "description": "A concept design I created of a media player application. Aimed to be extremely minimal and only have the required tools for playing any type of media.",
+        "link": "",
         "lightbox": false
       }
     }

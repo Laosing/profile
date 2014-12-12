@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>BracketSC2 Mini Site</title>
+    <meta name="description" content="BracketSC2 Mini Site; A tournament organizer for Starcraft 2!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+
+    <script src="js/vendor/TweenMax.min.js"></script>
+    <script src="js/vendor/ScrollToPlugin.min.js"></script>
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
+</head>
+<body>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="loader" id="load">
+        <div class="Center">
+            <div class="spinner">
+              <div class="rect1"></div>
+              <div class="rect2"></div>
+              <div class="rect3"></div>
+              <div class="rect4"></div>
+              <div class="rect5"></div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="visuallyhidden">BracketSC2 Mini Site</h1>
+
+    <section class="main">
+        <div class="Absolute-Center">
+            <img src="img/biglogo.png" alt="BracketSC2">
+            <h1>A Tournament Manager<br> Built for Starcraft 2</h1> 
+        </div>
+        <a href="#bracketsc2" id="scrolldown">
+            <div class="scrolldown">
+                <span class="animatedlink">Scroll Down</span>
+                <img src="img/arrowdown.png" alt="Scroll Down Arrow">
+            </div>
+        </a>
+    </section>
+
+    <section class="bracketsc2" id="bracketsc2">
+        <div class="wrapper">
+            <div class="about">
+                <h1 class="visuallyhidden">About BracketSC2</h1>
+                <img src="img/smalllogo.png" alt="BracketSC2 Logo">
+                <p>BracketSC2 is a web application built to host and organize your Starcraft 2 tournaments. Set up tournaments with a map pool that gets constantly updated while also tagging players with their mastered race. The scores are edited real time and allows for constant updates. Host your tournaments now and find out the best player of them all!</p>
+            </div>
+            <div class="features">
+                <h1 class="visuallyhidden">Features</h1>
+                <div class="half fl">
+                    <img src="img/brackets.png" alt="Simple Bracket Management">
+                    <h2>Simplified Tournament Management</h2>
+                    <p>Extremely simple tournament management. Keep track of all your tournaments that are completed or in progress. Update scores in real time and watch BracketSC2 run your tournament for you. There can only be one champion!</p>
+                </div>
+                <div class="half fr">
+                    <img src="img/races.png" alt="Visually identify your mastered race">
+                    <h2>Built for Starcraft 2</h2>
+                    <p>This is Starcraft 2, the race that you’ve chosen to master should appear beside your player tag. Nothing screams domination better until you’ve destroyed every unbalanced race and map that gets thrown your way.</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="moreinfo animate">
+            <div class="wrapper animate" id="wrap">
+                <div class="dev animate">
+                    <a href="#" id="dev">
+                        <img src="img/dev.png" alt="Developer Icon">
+                        <div class="moreinfo_h1">About The Dev</div>
+                    </a>
+                </div>
+                <div class="tech animate">
+                    <a href="#" id="tech">
+                        <img src="img/techicon.png" alt="Technology Icon">
+                        <div class="moreinfo_h1">Technology Used</div>
+                    </a>
+                </div>
+                <div class="dev_info animate" id="dev_info">
+                    <h1 class="moreinfo_h1">About The Developer</h1>
+                    <img src="img/andrew.png" alt="Andrew Rattana">
+                    <p class="pad2">I’m Andrew Rattana, a web developer and designer from London Ontario. I love creating minimal clean designs as well as making them come to life. I am also a Starcraft 2 fanatic, and would be more than happy to play with any other Starcrafters out there. Check me out on <a class="animatedlink" href="http://us.battle.net/sc2/en/profile/3047483/1/Laosing/">Battle.net</a> or view my <a class="animatedlink" href="http://andrewrattana.com/">Portfolio</a>!</p>
+                </div>
+                <div class="dev_info animate" id="tech_info">
+                    <h1 class="moreinfo_h1">The Technology Used</h1>
+                    <img src="img/tech.png" alt="Technology Used">
+                    <p class="pad2">BracketSC2 has been built using the standard web technologies HTML5, CSS3, JavaScript, PHP, and MySQL. CodeIgniter is the PHP framework that will be used to maintain a MVC structure.</p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <img src="img/logo.svg" alt="Andrew Rattana">
+            Designed &amp; Developed By <a href="http://www.andrewrattana.com" class="animatedlink">Andrew Rattana</a> © 2014 Bracketsc2
+        </footer>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

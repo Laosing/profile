@@ -1,0 +1,246 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.animate, .sidebar .content ul li, .sidebar .footer ul li {
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease; }
+
+body {
+  font-size: 100%;
+  font-weight: 400;
+  position: relative;
+  background: #f0f0f0 0 0 repeat;
+  font-family: 'Roboto', sans-serif; }
+
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.clearfix:after {
+  clear: both; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.cover {
+  float: none;
+  margin: 2em auto;
+  max-width: 632px;
+  display: block;
+  box-shadow: 0 0 3px #aaa;
+  background: #fff; }
+  .cover .top {
+    box-shadow: 0 1px 0 #ccc;
+    background: #f8f8f8;
+    padding: 1em;
+    border-bottom: 1px solid #fff; }
+    .cover .top .user {
+      float: left; }
+      .cover .top .user img {
+        display: inline-block;
+        vertical-align: middle; }
+      .cover .top .user > div {
+        font-size: 1.5em;
+        vertical-align: middle;
+        font-weight: 700;
+        line-height: 50px;
+        padding: 0 .5em;
+        display: inline-block;
+        color: #333; }
+    .cover .top .icon {
+      float: right;
+      font-size: 2.9em;
+      display: block;
+      line-height: 50px;
+      padding: 0 .3em;
+      color: lightgray; }
+  .cover #movie {
+    width: auto !important;
+    max-width: 600px !important;
+    height: 400px !important;
+    margin: 1.6em auto;
+    display: block; }
+  .cover .bottom {
+    box-shadow: 0 -1px 0 #ccc;
+    background: #f8f8f8;
+    padding: .3em 1em;
+    border-top: 1px solid #fff; }
+    .cover .bottom .likes, .cover .bottom .comments {
+      line-height: 50px;
+      color: gray;
+      font-weight: 700; }
+  .cover .commentarea {
+    border-top: 1px solid #ccc; }
+    .cover .commentarea .txtarea {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      width: 100%;
+      display: block;
+      height: 70px;
+      outline: none;
+      padding: 1em;
+      font-size: 0.9em;
+      font-family: 'roboto';
+      resize: none; }
+    .cover .commentarea ul li {
+      border-bottom: 1px solid #eee;
+      display: block;
+      padding: 1em; }
+      .cover .commentarea ul li:last-child {
+        border-bottom: none; }
+      .cover .commentarea ul li > div img {
+        padding-right: 1em; }
+      .cover .commentarea ul li > div .user {
+        font-weight: 700; }
+      .cover .commentarea ul li > div .date {
+        font-size: .8em;
+        color: #aaa; }
+      .cover .commentarea ul li > div p {
+        padding-left: 4.6em;
+        font-size: 0.9em;
+        line-height: 1.7em;
+        margin-top: 1em; }
+
+.hide {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  display: block;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-left: none;
+  padding: .5em;
+  color: #333;
+  font-size: .8em;
+  cursor: pointer; }
+  .hide i {
+    display: block; }
+  .hide i.active {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg); }
+
+.sidebar {
+  width: 325px;
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+  border-right: 1px solid #ccc; }
+  .sidebar .topbar {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    background: #fff;
+    z-index: 60;
+    padding: 1em; }
+    .sidebar .topbar ul {
+      width: 100%;
+      display: table; }
+      .sidebar .topbar ul li {
+        display: table-cell;
+        border: 1px solid #eee;
+        padding: 1em;
+        text-align: center;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: .8em;
+        font-weight: 700;
+        color: #666;
+        width: 50%; }
+        .sidebar .topbar ul li:first-child {
+          background: #f8f8f8;
+          border-radius: 3px 0 0 3px;
+          border-right: 0; }
+        .sidebar .topbar ul li:last-child {
+          border-radius: 0 3px 3px 0; }
+  .sidebar .content {
+    height: 500px;
+    display: block;
+    overflow: auto;
+    position: relative;
+    width: 100%;
+    z-index: 50; }
+    .sidebar .content ul li {
+      border-bottom: 1px solid #eee;
+      width: 100%;
+      cursor: pointer;
+      display: table;
+      padding: 1em; }
+      .sidebar .content ul li:hover {
+        background: #f8f8f8; }
+      .sidebar .content ul li img {
+        display: table-cell;
+        margin-right: 1em; }
+      .sidebar .content ul li > div {
+        vertical-align: middle;
+        color: #666;
+        font-size: .9rem;
+        display: table-cell; }
+        .sidebar .content ul li > div > div {
+          line-height: 1.3em; }
+        .sidebar .content ul li > div .date {
+          font-size: .8rem;
+          color: #999;
+          line-height: 2em; }
+  .sidebar .footer {
+    border-top: 1px solid #ccc;
+    z-index: 70;
+    background: #fff;
+    padding: 1em;
+    height: 50px; }
+    .sidebar .footer ul {
+      text-align: center; }
+      .sidebar .footer ul li {
+        padding: 0 1em;
+        display: inline-block;
+        font-size: .8em;
+        text-transform: uppercase;
+        color: #999;
+        cursor: pointer; }
+        .sidebar .footer ul li:hover {
+          color: #666;
+          text-decoration: underline; }
+
+.sidebar.active {
+  -webkit-transform: translate3d(-100%, 0%, 0);
+  -moz-transform: translate3d(-100%, 0%, 0);
+  -ms-transform: translate3d(-100%, 0%, 0);
+  -o-transform: translate3d(-100%, 0%, 0);
+  transform: translate3d(-100%, 0%, 0); }
+
+@media only screen and (max-width: 1450px) {
+  .cover {
+    margin: 2em 13em;
+    float: right; } }
+@media only screen and (max-width: 1250px) {
+  .cover {
+    margin: 2em;
+    float: right; } }
+@media only screen and (max-width: 1050px) {
+  .cover {
+    margin: 2em auto;
+    float: none; }
+
+  .sidebar {
+    display: none; } }

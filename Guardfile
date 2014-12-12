@@ -1,6 +1,6 @@
 group :development do
   guard :livereload do
-    watch(%r{.+\.(php|sass|scss|rb|info|css|js|html?)$})
+    watch(%r{.+\.(json|php|sass|scss|rb|info|css|js|html?)$})
   end
 
   if File.exists?("./config.rb")

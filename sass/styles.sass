@@ -74,7 +74,7 @@ a, input, button, textarea, select
   top: 0
   bottom: 0
   width: 100%
-  background: url('../img/3-dark.jpg') center center no-repeat
+  background: url('../img/3-dark2.jpg') center center no-repeat
   +background-size(cover)
   z-index: 20
   +transition(transform .3s ease)
@@ -225,8 +225,15 @@ a, input, button, textarea, select
     text-align: left
   p
     margin-bottom: 4em
+    line-height: 1.5
+    a
+      color: $primary
+      &:hover
+        text-decoration: underline
   img
     width: 100%
+    max-width: 800px
+    margin: 0 auto
   .button
     border: 1px solid $white-dark
     &:hover
@@ -358,3 +365,22 @@ a, input, button, textarea, select
     &:hover
       color: $primary
       border: 1px solid $primary
+
+.logo
+  position: absolute
+  top: .5em
+  left: .5em
+  opacity: .5
+  +breakpoint($break-mobile)
+    right: .5em
+    top: initial
+    left: initial
+    bottom: .2em
+  &:hover
+    opacity: 1
+  svg
+    width: 40px
+    height: auto
+    fill: $white
+  path
+    fill: inherit
