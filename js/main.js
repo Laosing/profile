@@ -1,6 +1,8 @@
-var Portfolio = function() {
-  "use strict";
+(function($) {
 
+"use strict";
+
+var Portfolio = function() {
   var self = this,
       _checkout = $('#checkout'),
       _main = $('.main'),
@@ -321,9 +323,11 @@ var portfolio = new Portfolio();
 portfolio.init();
 
 $(window).resize(function() {
-  windowHeight = $(this).height();
+  var windowHeight = $(this).height();
 
   $('#work-container').css('height', windowHeight);
 });
 
 $(window).resize();
+
+})(jQuery);
