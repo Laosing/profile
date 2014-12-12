@@ -7,7 +7,28 @@ var Portfolio = function() {
       _work = $('.work'),
       _close = $('.close'),
       _loader = $('.load'),
-      _helper = $('.helper');
+      _helper = $('.helper'),
+      _about = $('.about'),
+      _mediaMobile = '600px';
+
+  var typedArray = [
+    "Hi!^1500 Here's some fun facts about me.",
+    "Starcraft 2 is my favourite game",
+    "Sublime Text for coding",
+    "I have a dog named Leo",
+    "Chrome > Firefox :)",
+    "My most favourite food is pho (rice noodle soup)",
+    "Ubuntu for development, Windows for gaming :D",
+    "SASS > SCSS syntax",
+    "Having fun!",
+    "Badminton is my favourite sport",
+    "My favourite programming language is JavaScript",
+    "I love solving problems",
+    "I've been training in martial arts for over 5 years",
+    "Dream of working with an awesome group of inspiring people who want to make awesome things!",
+    "The end.",
+    ""
+  ];
 
   this.timelineArray = null;
   this.workArray = null;
@@ -18,29 +39,47 @@ var Portfolio = function() {
 
     _checkout.click(function(event) {
       event.preventDefault();
-
       self.open();
     });
 
     _close.click(function(event) {
       event.preventDefault();
-
       self.close();
+    });
+
+    $('.about-me').click(function(event) {
+      event.preventDefault();
+      self.aboutOpen();
+    });
+
+    $('.about-close').click(function(event) {
+      event.preventDefault();
+      self.aboutClose();
     });
   }
 
   this.open = function() {
+    var x = this.checkMobile() ? '-100%' : '-30%';
+
     _main.velocity({
-      left: '-30%'
+      left: x
     }, 'normal', 'ease', function() {
-      _work.velocity('fadeIn', 'normal', function() {
-        self.timelineArray.each(function(index) {
-          $(this).velocity('fadeIn', {
-            duration: 'normal',
-            delay: 200 * index,
-            display: 'block'
-          });
+      if(self.checkMobile()) {
+        self.timelineAnimation();
+      } else {
+        _work.velocity('fadeIn', 'normal', function() {
+          self.timelineAnimation();
         });
+      }
+    });
+  }
+
+  this.timelineAnimation = function() {
+    self.timelineArray.each(function(index) {
+      $(this).velocity('fadeIn', {
+        duration: 'normal',
+        delay: 200 * index,
+        display: 'block'
       });
     });
   }
@@ -50,9 +89,62 @@ var Portfolio = function() {
       _main.velocity({
         left: ''
       }, 'normal', 'ease', function() {
+        $('.active, .helper')
+          .removeClass('active')
+          .removeAttr('style');
+
         self.timelineArray.hide();
       });
     });
+  }
+
+  this.aboutOpen = function() {
+    _about.velocity({
+      top: '',
+      ease: 'ease'
+    }, function() {
+      $(this)
+        .find('.about-text')
+        .typed({
+          strings: typedArray,
+          loop: true,
+          typeSpeed: 0,
+          contentType: 'text',
+          backDelay: 2000,
+          startDelay: 1000
+        });
+
+      self.checkMobile(function() {
+        $('.social').velocity('fadeIn');
+      })
+    });
+  }
+
+  this.checkMobile = function(cb) {
+    if(Modernizr.mq('only screen and (max-width: ' + _mediaMobile + ')')) {
+      if(typeof cb === 'function')
+        cb();
+
+      return true;
+    }
+    return false;
+  }
+
+  this.aboutClose = function() {
+    _about.velocity({
+      top: '100%',
+      ease: 'ease'
+    }, function() {
+      var span = $('<span/>', {
+        class: 'about-text'
+      });
+
+      $(this).find('.about-wrap').html('').append(span);
+    });
+
+    self.checkMobile(function() {
+      $('.social').velocity('fadeOut');
+    })
   }
 
   this.setHtml = function() {
@@ -74,7 +166,7 @@ var Portfolio = function() {
         self.timelineArray = $('#timeline li');
         self.workArray = $('#work-container li');
 
-        self.timelineArray.hide();
+        self.timelineArray.hide()
         self.setLogic();
       });
   }
@@ -92,13 +184,11 @@ var Portfolio = function() {
 
     $('.next').click(function(event) {
       event.preventDefault();
-
       self.nextLogic($(this));
     });
 
     $('.prev').click(function(event) {
       event.preventDefault();
-
       self.prevLogic($(this));
     });
   }
@@ -140,6 +230,10 @@ var Portfolio = function() {
         self.show(el, timelineEl);
       });
     }
+
+   if(this.checkMobile()) {
+      _work.velocity('fadeIn');
+    }
   }
 
   this.show = function(el, timelineEl) {
@@ -171,10 +265,10 @@ var Portfolio = function() {
           .find('.work-info')
           .prepend($(this));
 
+        _loader.fadeOut();
+
         if(typeof cb === 'function')
           cb();
-
-        _loader.fadeOut();
       });
   }
 

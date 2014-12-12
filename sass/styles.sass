@@ -66,6 +66,8 @@ a, input, button, textarea, select
   width: 30%
   background: $black
   overflow-y: scroll
+  +breakpoint($break-mobile)
+    width: 100%
 
 .main
   position: absolute
@@ -89,6 +91,9 @@ a, input, button, textarea, select
   background: rgba(black, .5)
   z-index: 21
   display: none
+  +breakpoint($break-mobile)
+    overflow-x: hidden
+    width: 100%
 
 .intro
   padding: 2em
@@ -97,6 +102,8 @@ a, input, button, textarea, select
   width: 100%
   max-width: 670px
   margin: 15% auto 0
+  +breakpoint($break-mobile)
+    margin-top: 1em
   div
     position: relative
     +font-size(48)
@@ -258,12 +265,15 @@ a, input, button, textarea, select
   width: auto
   +breakpoint($break-mobile)
     width: 100%
+    margin-bottom: 4em
 
 .load
   position: absolute
   top: .8em
   left: 49%
   display: none
+  +breakpoint($break-mobile)
+    left: .1em
 
 .helper
   position: absolute
@@ -274,6 +284,8 @@ a, input, button, textarea, select
   background: $white
   z-index: 5
   +border-radius(50px)
+  +breakpoint($break-mobile)
+    display: none
   span
     background: $primary
     color: $white
@@ -288,31 +300,61 @@ a, input, button, textarea, select
   background: none
   border: 1px solid $white
   color: $white
+  +breakpoint($break-mobile)
+    margin: 0
   &:hover
     background: $white
     color: $black
 
+#checkout
+  +breakpoint($break-mobile)
+    margin-top: 1em
+    width: auto
+
+.about-me, #checkout
+  +breakpoint($break-mobile)
+    display: block
+
 .about
   position: absolute
+  top: 100%
   bottom: 0
   width: 100%
-  background: $black-dark
-  padding: 1em
+  background: transparentize($black, .05)
+  padding: 80px
+  +font-size(40)
   color: $white
-  display: none
+  text-align: center
 
-.email
-  +font-size(20)
+.about-close
   color: $white
+  position: absolute
+  right: 1em
+  top: 1em
+  +font-size(20)
+
+.social
   position: absolute
   bottom: 1em
   left: 1em
-  background: $black
-  padding: 16px 18px
-  +border-radius(50px)
-
-.email-address
-  +hide-text()
-  display: block
-  width: 0
-  height: 0
+  +breakpoint($break-mobile)
+    left: .2em
+    bottom: .2em
+    display: none
+  a
+    +font-size(20)
+    color: $white
+    position: relative
+    background: transparentize($black, .2)
+    display: block
+    padding: 15px 18px
+    margin: .5em .5em 0 0
+    width: 56px
+    text-align: center
+    border: 1px solid transparent
+    +border-radius(50px)
+    +breakpoint($break-mobile)
+      margin: .2em .2em 0 0
+    &:hover
+      color: $primary
+      border: 1px solid $primary

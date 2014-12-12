@@ -32,21 +32,26 @@
       <a href="#" class="button about-me">About Me</a>
       <a href="#" class="button" id="checkout">Checkout my stuff!</a>
     </div>
-    <div class="about">
-      fasdklja lkfalds kjfas;l fkjaf lkjalfk j
+    <div class="about"><a href="#" class="about-close" title="Close"><span class="fa fa-close"></span><span class="element-invisible">Close</span></a><span class="about-wrap"><span class="about-text"></span></span></div>
+    <div class="social">
+      <a href="https://github.com/Laosing" class="github" title="Github"><span class="fa fa-github-alt"></span><span class="element-invisible">Github</span></a>
+      <!-- <a href="https://dribbble.com/Laosing" class="dribbble" title="Dribbble"><span class="fa fa-dribbble"></span><span class="element-invisible">Dribbble</span></a>  -->
+      <a href="https://ca.linkedin.com/in/andrewrattana" class="linkedin" title="Linkedin"><span class="fa fa-linkedin"></span><span class="element-invisible">Linkedin</span></a> 
+      <a href="http://us.battle.net/sc2/en/profile/3047483/1/Laosing/" class="starcraft" title="StarCraft 2 Profile"><span class="fa fa-gamepad"></span><span class="element-invisible">StarCraft 2 Profile</span></a> 
+      <!-- <a href="/files/resume.pdf" class="resume" title="Resume"><span class="fa fa-file-text"></span><span class="element-invisible">Resume</span></a> -->
+      <a href="mailto:andrew.rattana@gmail.com" class="email" title="Email"><span class="fa fa-envelope"></span><span class="element-invisible">Send me a message at andrew.rattana@gmail.com</span></a>     
     </div>
-    <a href="mailto:andrew.rattana@gmail.com" class="email"><span class="fa fa-envelope"></span><span class="email-address">Send me a message at andrew.rattana@gmail.com</span></a>
   </section>
   <section class="work">
-    <a href="#" class="close fa fa-close" title="Close"><span class="hide-text">Close</span></a>
+    <a href="#" class="close fa fa-close" title="Close"><span class="element-invisible">Close</span></a>
     <img src="img/loading.svg" alt="Loading" class="load">
     <span class="helper">Select something!<span class="fa fa-arrow-right"></span></span>
     <ul class="work-container" id="work-container">
     <script id="work-template" type="text/x-handlebars-template">
     {{#each work}}
       <li class="work-piece" data-work="{{@index}}">
-        <a href="#" class="next button fa fa-arrow-right" title="Next"><span class="hide-text">Next</span></a>
-        <a href="#" class="prev button fa fa-arrow-left" title="Previous"><span class="hide-text">Previous</span></a>
+        <a href="#" class="next button fa fa-arrow-right" title="Next"><span class="element-invisible">Next</span></a>
+        <a href="#" class="prev button fa fa-arrow-left" title="Previous"><span class="element-invisible">Previous</span></a>
         <div class="work-info">
           <h3>{{modal.title}}</h3>
           <p>{{{modal.description}}}</p>
@@ -80,6 +85,7 @@
   </script>
   <script src="js/vendor/handlebars.min.js"></script>
   <script src="js/vendor/velocity.min.js"></script>
+  <script src="js/vendor/typed.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
   

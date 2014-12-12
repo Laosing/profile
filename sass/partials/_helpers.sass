@@ -41,5 +41,15 @@
 .hidden
   display: none !important
 
-.icon
-  font-family: "Material Design Iconic Font"
+.typed-cursor
+  opacity: 1
+  color: $white
+  +animation(blink 0.7s infinite)
+
++keyframes(blink)
+  0%
+    opacity: 1 
+  50%
+    opacity: 0 
+  100%
+    opacity: 1 
