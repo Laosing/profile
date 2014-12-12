@@ -17,6 +17,7 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/lightbox.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
@@ -56,7 +57,7 @@
           <h3>{{modal.title}}</h3>
           <p>{{{modal.description}}}</p>
           {{#if modal.link}}
-          <a href="http://{{modal.link}}" class="button checklink">Check it out!</a>
+          <a href="{{{modal.link}}}" {{#if modal.lightbox}} data-lightbox="{{@index}}" {{/if}} class="button checklink">Check it out!</a>
           {{/if}}
         </div>
       </li>
@@ -85,6 +86,7 @@
   </script>
   <script src="js/vendor/handlebars.min.js"></script>
   <script src="js/vendor/velocity.min.js"></script>
+  <script src="js/vendor/lightbox.min.js"></script>
   <script src="js/vendor/typed.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
