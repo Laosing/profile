@@ -95,12 +95,14 @@ var Portfolio = function() {
 
       var el = $(this).parent(),
           index = el.data('work'),
-          next = el.next();
+          next = el.next(),
+          timelineElIndex = index < self.workArray.length - 1 ? index + 1 : 0,
+          timelineEl = $($('#timeline li')[timelineElIndex]);
 
       if(index === self.workArray.length - 1) 
         next = $('#work-container li[data-work="0"]');
 
-      self.next(next);
+      self.next(next, timelineEl);
     });
 
     $('.prev').click(function(event) {
@@ -109,12 +111,14 @@ var Portfolio = function() {
       var el = $(this).parent(),
           index = el.data('work'),
           prev = el.prev(),
-          last = self.timelineArray.length - 1;
+          last = self.timelineArray.length - 1,
+          timelineElIndex = index !== 0 ? index - 1 : self.workArray.length - 1,
+          timelineEl = $($('#timeline li')[timelineElIndex]);
 
       if(index === 0)
         prev = $('#work-container li[data-work="' + last + '"]');
 
-      self.prev(prev);
+      self.prev(prev, timelineEl);
     });
   }
 
@@ -193,10 +197,11 @@ var Portfolio = function() {
     });
   }
 
-  this.prev = function(el) {
+  this.prev = function(el, timelineEl) {
     this.loadImage(el, function() {
       self.hide('100%', function() {
         el.addClass('active');
+        timelineEl.addClass('active');
 
         el
           .velocity({
