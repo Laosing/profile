@@ -90,7 +90,7 @@ a, input, button, textarea, select
   z-index: 21
   display: none
 
-.about
+.intro
   padding: 2em
   color: $white
   text-align: center
@@ -187,12 +187,13 @@ a, input, button, textarea, select
   text-decoration: none
   +font-size(14)
   background: $white
+  border: 1px solid transparent
   @extend .animate
   &:hover
     opacity: .8
     color: $black
 
-.about .button
+.intro .button
   margin-top: 20%
 
 .work-container
@@ -276,8 +277,42 @@ a, input, button, textarea, select
   span
     background: $primary
     color: $white
-    padding: 7px
+    padding: 7px 8px
     border-radius: 100%
     position: absolute
     top: 0.3em
     right: 0.3em
+
+.about-me
+  margin-right: 1em
+  background: none
+  border: 1px solid $white
+  color: $white
+  &:hover
+    background: $white
+    color: $black
+
+.about
+  position: absolute
+  bottom: 0
+  width: 100%
+  background: $black-dark
+  padding: 1em
+  color: $white
+  display: none
+
+.email
+  +font-size(20)
+  color: $white
+  position: absolute
+  bottom: 1em
+  left: 1em
+  background: $black
+  padding: 16px 18px
+  +border-radius(50px)
+
+.email-address
+  +hide-text()
+  display: block
+  width: 0
+  height: 0

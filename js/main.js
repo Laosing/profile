@@ -86,43 +86,51 @@ var Portfolio = function() {
       $(value).click(function() {
         var el = $(self.workArray[index]);
 
-        self.logic(el, $(this));
+        self.mainLogic(el, $(this));
       });
     });
 
     $('.next').click(function(event) {
       event.preventDefault();
 
-      var el = $(this).parent(),
-          index = el.data('work'),
-          next = el.next(),
-          timelineElIndex = index < self.workArray.length - 1 ? index + 1 : 0,
-          timelineEl = $($('#timeline li')[timelineElIndex]);
-
-      if(index === self.workArray.length - 1) 
-        next = $('#work-container li[data-work="0"]');
-
-      self.next(next, timelineEl);
+      self.nextLogic($(this));
     });
 
     $('.prev').click(function(event) {
       event.preventDefault();
 
-      var el = $(this).parent(),
-          index = el.data('work'),
-          prev = el.prev(),
-          last = self.timelineArray.length - 1,
-          timelineElIndex = index !== 0 ? index - 1 : self.workArray.length - 1,
-          timelineEl = $($('#timeline li')[timelineElIndex]);
-
-      if(index === 0)
-        prev = $('#work-container li[data-work="' + last + '"]');
-
-      self.prev(prev, timelineEl);
+      self.prevLogic($(this));
     });
   }
 
-  this.logic = function(el, timelineEl) {
+  this.prevLogic = function(el) {
+    var el = el.parent(),
+        index = el.data('work'),
+        prev = el.prev(),
+        last = self.timelineArray.length - 1,
+        timelineElIndex = index !== 0 ? index - 1 : self.workArray.length - 1,
+        timelineEl = $($('#timeline li')[timelineElIndex]);
+
+    if(index === 0)
+      prev = $('#work-container li[data-work="' + last + '"]');
+
+    self.prev(prev, timelineEl);
+  }
+
+  this.nextLogic = function(el) {
+    var el = el.parent(),
+        index = el.data('work'),
+        next = el.next(),
+        timelineElIndex = index < self.workArray.length - 1 ? index + 1 : 0,
+        timelineEl = $($('#timeline li')[timelineElIndex]);
+
+    if(index === self.workArray.length - 1) 
+      next = $('#work-container li[data-work="0"]');
+
+    self.next(next, timelineEl);
+  }
+
+  this.mainLogic = function(el, timelineEl) {
     if(el.hasClass('active') || $('.velocity-animating').length) {
       return;
     } else if($('.active').length) {

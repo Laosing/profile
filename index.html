@@ -17,7 +17,7 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 
@@ -27,21 +27,26 @@
   <![endif]-->
   <h1 class="element-invisible">Andrew Rattana</h1>
   <section class="main clearfix">
-    <div class="about">
+    <div class="intro">
       <div><span class="top small">Hi, my name is <strong>Andrew Rattana</strong> &amp; I'm a</span>Designer, Developer, Creator <span class="bottom small">of all things awsome!</span></div>
+      <a href="#" class="button about-me">About Me</a>
       <a href="#" class="button" id="checkout">Checkout my stuff!</a>
     </div>
+    <div class="about">
+      fasdklja lkfalds kjfas;l fkjaf lkjalfk j
+    </div>
+    <a href="mailto:andrew.rattana@gmail.com" class="email"><span class="fa fa-envelope"></span><span class="email-address">Send me a message at andrew.rattana@gmail.com</span></a>
   </section>
   <section class="work">
-    <a href="#" class="close md-close" title="Close"><span class="hide-text">Close</span></a>
+    <a href="#" class="close fa fa-close" title="Close"><span class="hide-text">Close</span></a>
     <img src="img/loading.svg" alt="Loading" class="load">
-    <span class="helper">Select something!<span class="md-arrow-forward"></span></span>
+    <span class="helper">Select something!<span class="fa fa-arrow-right"></span></span>
     <ul class="work-container" id="work-container">
     <script id="work-template" type="text/x-handlebars-template">
     {{#each work}}
       <li class="work-piece" data-work="{{@index}}">
-        <a href="#" class="next button md-arrow-forward" title="Next"><span class="hide-text">Next</span></a>
-        <a href="#" class="prev button md-arrow-back" title="Previous"><span class="hide-text">Previous</span></a>
+        <a href="#" class="next button fa fa-arrow-right" title="Next"><span class="hide-text">Next</span></a>
+        <a href="#" class="prev button fa fa-arrow-left" title="Previous"><span class="hide-text">Previous</span></a>
         <div class="work-info">
           <h3>{{modal.title}}</h3>
           <p>{{{modal.description}}}</p>
