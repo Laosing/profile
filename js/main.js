@@ -103,17 +103,19 @@ var Portfolio = function() {
       return;
     }
 
-    this.hide(0, function() {
-      _work.velocity('fadeOut', 'normal', function() {
-        _main.velocity({
-          left: ''
-        }, 'normal', 'ease', function() {
-          $('.active, .helper')
-            .removeClass('active')
-            .removeAttr('style');
+    _work.velocity('fadeOut', 'normal', function() {
+      _main.velocity({
+        left: ''
+      }, 'normal', 'ease', function() {
+        $('#work-container li.active')
+          .removeClass('active')
+          .removeAttr('style')
+          .hide();
 
-          _work.removeClass('open');
-        });
+        $('.active').removeClass('active');
+        _helper.removeAttr('style');
+
+        _work.removeClass('open');
       });
     });
 
