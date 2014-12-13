@@ -323,14 +323,9 @@ var portfolio = new Portfolio();
 portfolio.init();
 
 $(window).resize(function() {
-  var windowHeight = $(this).height(),
-      windowWidth = portfolio.checkMobile() ? $(this).width() : '';
+  var windowHeight = $(this).height();
 
-  $('#work-container')
-    .css({
-      'height': windowHeight,
-      'width': windowWidth
-    });
+  $('#work-container').css('height', windowHeight);
 });
 
 $(window).resize();
