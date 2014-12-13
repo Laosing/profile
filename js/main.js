@@ -80,7 +80,7 @@ var Portfolio = function() {
     self.timelineArray.each(function(index) {
       $(this).velocity('fadeIn', {
         duration: 'normal',
-        delay: 200 * index,
+        delay: 150 * index,
         display: 'block'
       });
     });
@@ -228,7 +228,7 @@ var Portfolio = function() {
     } else if($('.active').length) {
       this.next(el, timelineEl);
     } else {
-      _helper.fadeOut('fast', function() {
+      _helper.velocity('fadeOut', 'fast', function() {
         self.show(el, timelineEl);
       });
     }
@@ -255,7 +255,7 @@ var Portfolio = function() {
       return;
     }
 
-    _loader.fadeIn('fast');
+    _loader.velocity('fadeIn', 'fast');
 
     var data = this.json.work[el.data('work')].modal;
 
@@ -267,7 +267,7 @@ var Portfolio = function() {
           .find('.work-info')
           .prepend($(this));
 
-        _loader.fadeOut();
+        _loader.velocity('fadeOut');
 
         if(typeof cb === 'function')
           cb();
