@@ -69,7 +69,7 @@ var Portfolio = function() {
       _close.velocity('fadeIn', 'fast');
 
       if(self.checkMobile()) {
-        self.timelineAnimation();
+        return;
       } else {
         _work.velocity('fadeIn', 'normal', function() {
           self.timelineAnimation();
@@ -193,7 +193,10 @@ var Portfolio = function() {
         self.workArray = $('#work-container li');
 
         self.workArray.hide();
-        self.timelineArray.hide();
+        
+        if(!self.checkMobile())
+          self.timelineArray.hide();
+        
         self.setLogic();
       });
   }
