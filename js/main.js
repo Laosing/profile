@@ -94,34 +94,30 @@ var Portfolio = function() {
 
   this.close = function() {
     if(this.checkMobile() && _work.hasClass('open')) {
-      $('#work-container .active').velocity('fadeOut', 'normal', function() {
-        _work
-          .velocity('fadeOut')
-          .removeClass('open');
+      this.hide(0);
 
-        self.closeAnimate();
-      });
+      _work
+        .velocity('fadeOut')
+        .removeClass('open');
 
       return;
     }
 
-    _work.velocity('fadeOut', 'normal', function() {
-      _main.velocity({
-        left: ''
-      }, 'normal', 'ease', function() {
-        self.closeAnimate();
+    this.hide(0, function() {
+      _work.velocity('fadeOut', 'normal', function() {
+        _main.velocity({
+          left: ''
+        }, 'normal', 'ease', function() {
+          $('.active, .helper')
+            .removeClass('active')
+            .removeAttr('style');
+
+          _work.removeClass('open');
+        });
       });
     });
 
     _close.velocity('fadeOut', 'fast');
-  }
-
-  this.closeAnimate = function() {
-    $('.active, .helper')
-      .removeClass('active')
-      .removeAttr('style');
-
-    _work.removeClass('open');
   }
 
   this.aboutOpen = function() {
@@ -307,7 +303,7 @@ var Portfolio = function() {
   }
 
   this.hide = function(value, cb) {
-    $('.work-piece.active').velocity({
+    $('#work-container .active').velocity({
       left: value,
       opacity: 0
     }, 'normal', 'ease', function() {
