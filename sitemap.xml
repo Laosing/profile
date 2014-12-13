@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="//www.andrewrattana.com/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>http://www.andrewrattana.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://www.andrewrattana.com/work/Lighsing/index.html</loc><lastmod>2014-11-06T19:37Z</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>http://www.andrewrattana.com/work/Lighsing/about.html</loc><lastmod>2014-12-09T21:41Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://www.andrewrattana.com/work/Lighsing/contact.html</loc><lastmod>2014-12-09T21:24Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://www.andrewrattana.com/work/HTML5Tasks/</loc><lastmod>2014-12-09T22:06Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>http://www.andrewrattana.com/work/VideoJS/</loc><lastmod>2014-12-09T21:22Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://www.andrewrattana.com/work/thesis_minisite/</loc><lastmod>2014-12-09T00:19Z</lastmod><changefreq>daily</changefreq></url>
+</urlset>
