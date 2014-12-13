@@ -359,7 +359,7 @@ var portfolio = new Portfolio();
 portfolio.init();
 
 $(window).resize(function() {
-  var windowHeight = $(this).height();
+  var windowHeight = $(this).height() > 450 ? $(this).height() : 450;
 
   $('#work-container').css('height', windowHeight);
   $('.main').css('height', windowHeight);
