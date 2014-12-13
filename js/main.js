@@ -66,6 +66,8 @@ var Portfolio = function() {
     _main.velocity({
       left: x
     }, 'normal', 'ease', function() {
+      _close.velocity('fadeIn', 'fast');
+
       if(self.checkMobile()) {
         self.timelineAnimation();
       } else {
@@ -77,27 +79,49 @@ var Portfolio = function() {
   }
 
   this.timelineAnimation = function() {
-    self.timelineArray.each(function(index) {
-      $(this).velocity('fadeIn', {
-        duration: 'normal',
-        delay: 150 * index,
-        display: 'block'
-      });
+    if($('#timeline').hasClass('processed'))
+      return;
+
+    self.timelineArray.velocity('transition.fadeIn', {
+      stagger: 100,
+      complete: function() {
+        $(this).removeAttr('style');
+      }
     });
+
+    $('#timeline').addClass('processed');
   }
 
   this.close = function() {
+    if(this.checkMobile() && _work.hasClass('open')) {
+      $('#work-container .active').velocity('fadeOut', 'normal', function() {
+        _work
+          .velocity('fadeOut')
+          .removeClass('open');
+
+        self.closeAnimate();
+      });
+
+      return;
+    }
+
     _work.velocity('fadeOut', 'normal', function() {
       _main.velocity({
         left: ''
       }, 'normal', 'ease', function() {
-        $('.active, .helper')
-          .removeClass('active')
-          .removeAttr('style');
-
-        self.timelineArray.hide();
+        self.closeAnimate();
       });
     });
+
+    _close.velocity('fadeOut', 'fast');
+  }
+
+  this.closeAnimate = function() {
+    $('.active, .helper')
+      .removeClass('active')
+      .removeAttr('style');
+
+    _work.removeClass('open');
   }
 
   this.aboutOpen = function() {
@@ -122,16 +146,6 @@ var Portfolio = function() {
     });
   }
 
-  this.checkMobile = function(cb) {
-    if(Modernizr.mq('only screen and (max-width: ' + _mediaMobile + ')')) {
-      if(typeof cb === 'function')
-        cb();
-
-      return true;
-    }
-    return false;
-  }
-
   this.aboutClose = function() {
     _about.velocity({
       top: '100%',
@@ -147,6 +161,16 @@ var Portfolio = function() {
     self.checkMobile(function() {
       $('.social').velocity('fadeOut');
     })
+  }
+
+  this.checkMobile = function(cb) {
+    if(Modernizr.mq('only screen and (max-width: ' + _mediaMobile + ')')) {
+      if(typeof cb === 'function')
+        cb();
+
+      return true;
+    }
+    return false;
   }
 
   this.setHtml = function() {
@@ -168,7 +192,8 @@ var Portfolio = function() {
         self.timelineArray = $('#timeline li');
         self.workArray = $('#work-container li');
 
-        self.timelineArray.hide()
+        self.workArray.hide();
+        self.timelineArray.hide();
         self.setLogic();
       });
   }
@@ -241,11 +266,15 @@ var Portfolio = function() {
   this.show = function(el, timelineEl) {
     el.addClass('active');
     timelineEl.addClass('active');
+    _work.addClass('open');
 
     this.loadImage(el, function() {
-      el.velocity({
-        left: '0'
-      }, 'normal', 'ease');
+      el
+        .show()
+        .velocity({
+          left: '0',
+          display: 'block'
+        }, 'normal', 'ease');
     });
   }
 
@@ -283,6 +312,8 @@ var Portfolio = function() {
         .removeAttr('style')
         .removeClass('active');
 
+      $(this).hide();
+
       if(typeof cb === 'function')
         cb();
     });
@@ -293,10 +324,13 @@ var Portfolio = function() {
       self.hide('-200%', function() {
         el.addClass('active');
         timelineEl.addClass('active');
+        _work.addClass('open');
 
-        el.velocity({
-          left: '0'
-        }, 'normal', 'ease');
+        el
+          .show()
+          .velocity({
+            left: '0'
+          }, 'normal', 'ease');
       });
     });
   }
@@ -309,8 +343,9 @@ var Portfolio = function() {
 
         el
           .velocity({
-            'left': '-200%',
+            left: '-200%',
           }, 0)
+          .show()
           .velocity({
             left: '0',
           }, 'normal', 'ease');
@@ -326,6 +361,9 @@ $(window).resize(function() {
   var windowHeight = $(this).height();
 
   $('#work-container').css('height', windowHeight);
+  $('.main').css('height', windowHeight);
+  $('.work').css('height', windowHeight);
+  $('.side').css('height', windowHeight);
 });
 
 $(window).resize();

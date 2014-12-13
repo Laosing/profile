@@ -21,8 +21,10 @@ body
   +font-size(16)
   font-family: 'Lato', sans-serif
   background: $white-lighter
+  position: relative
+  //overflow: hidden
 
-ul
+ul, section, body
   margin: 0
   padding: 0
 
@@ -77,8 +79,8 @@ a, input, button, textarea, select
   top: 0
   bottom: 0
   width: 100%
-  background: url('../img/3-dark2.jpg') center center no-repeat
-  +background-size(cover)
+  background: $black url('../img/3-dark2.jpg') top center no-repeat
+  //+background-size(cover)
   z-index: 20
   +transition(transform .3s ease)
   +box-shadow(0 0 10px $black-darker)
@@ -183,32 +185,9 @@ a, input, button, textarea, select
   line-height: 1.5em
   color: $white-dark
 
-.button
-  +inline-block()
-  padding: 14px 27px 14px 29px
-  white-space: nowrap
-  border-radius: 50px
-  text-align: center
-  cursor: pointer
-  font-weight: 500
-  line-height: 14px
-  letter-spacing: 1px
-  text-transform: uppercase
-  text-decoration: none
-  +font-size(14)
-  background: $white
-  border: 1px solid transparent
-  @extend .animate
-  &:hover
-    opacity: .8
-    color: $black
-
-.intro .button
-  margin-top: 20%
-
 .work-container
   width: 100%
-  position: relative
+  position: absolute
   padding-top: 4em
   overflow-x: hidden
   overflow-y: initial
@@ -244,13 +223,6 @@ a, input, button, textarea, select
       color: $white
       border: 1px solid $primary-dark
 
-.close
-  position: absolute
-  right: 1em
-  top: 0
-  background: $white-lighter
-  z-index: 30
-
 .prev, .next
   position: absolute
   padding: 0
@@ -270,6 +242,14 @@ a, input, button, textarea, select
   text-align: center
   &:before
     line-height: 44px
+
+.close
+  position: absolute
+  right: 15px
+  top: 0
+  background: $white-lighter
+  z-index: 30
+  display: none
 
 .checklink
   width: auto
@@ -324,6 +304,9 @@ a, input, button, textarea, select
 .about-me, #checkout
   +breakpoint($break-mobile)
     display: block
+
+.intro .button
+  margin-top: 20%
 
 .about
   position: absolute
