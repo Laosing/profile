@@ -22,7 +22,6 @@ body
   font-family: 'Lato', sans-serif
   background: $black
   position: relative
-  //overflow: hidden
 
 ul, section, body
   margin: 0
@@ -85,8 +84,6 @@ a, input, button, textarea, select
   +transition(transform .3s ease)
   +box-shadow(0 0 10px $black-darker)
   overflow: hidden
-  &.active
-    +translate3d(-30%,0,0)
 
 .work
   position: absolute
@@ -263,7 +260,7 @@ a, input, button, textarea, select
   left: 49%
   display: none
   +breakpoint($break-mobile)
-    left: .1em
+    left: .8em
 
 .helper
   position: absolute
@@ -324,6 +321,7 @@ a, input, button, textarea, select
   position: absolute
   right: 1em
   top: 1em
+  display: block
   +font-size(20)
 
 .social
@@ -366,7 +364,7 @@ a, input, button, textarea, select
     opacity: 1
   svg
     width: 40px
-    height: auto
+    height: 40px
     fill: $white
   path
     fill: inherit

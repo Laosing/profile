@@ -15,20 +15,17 @@ var Portfolio = function() {
 
   var typedArray = [
     "Hi!^1500 Here's some fun facts about me.",
+    "My skill set includes HTML, CSS, JS, SASS, PHP... ^1000 and Photoshop, Illustrator, After Effects & Cinema 4D. :)",
+    "I'm motivated to make awesome things!",
     "Starcraft 2 is my favourite game",
     "Sublime Text is the best code editor!",
     "I have a dog named Leo",
-    "Chrome > Firefox :)",
-    "My favourite food is pho? (rice noodle soup...)",
-    "Ubuntu for development, Windows for gaming :D",
-    "I prefer SASS > SCSS syntax",
-    "Smile and have fun!",
-    "Badminton is my favourite sport",
-    "My favourite programming language is JavaScript",
     "I love solving problems",
-    "I've been training in martial arts for over 5 years",
-    "Dream of working with an awesome group of inspiring people who want to make awesome things!",
-    "The end.",
+    "Chrome > Firefox > Opera > Safari > IE :)",
+    "Ubuntu for development, Windows for gaming :D",    
+    "My favourite programming language is JavaScript",
+    "Badminton is my favourite sport",
+    "Thanks for reading! Smile and have an awesome day! :)",
     ""
   ];
 
@@ -361,10 +358,7 @@ portfolio.init();
 $(window).resize(function() {
   var windowHeight = $(this).height() > 450 ? $(this).height() : 450;
 
-  $('#work-container').css('height', windowHeight);
-  $('.main').css('height', windowHeight);
-  $('.work').css('height', windowHeight);
-  $('.side').css('height', windowHeight);
+  $('#work-container, .main, .work, .side').css('height', windowHeight);
 });
 
 $(window).resize();
