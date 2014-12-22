@@ -294,7 +294,10 @@ var Portfolio = function() {
           .find('.work-info')
           .prepend($(this));
 
-        _loader.velocity('fadeOut');
+        _loader
+          .velocity('fadeOut', function() {
+            $(this).removeClass('velocity-animating');
+          });
 
         if(typeof cb === 'function')
           cb();
