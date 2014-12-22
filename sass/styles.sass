@@ -262,6 +262,10 @@ a, input, button, textarea, select
   position: absolute
   top: .8em
   left: 49%
+  width: 38px
+  height: 38px
+  background: url('../img/loader.gif') center center no-repeat
+  background: url('../img/loading.svg') center center no-repeat
   display: none
   +breakpoint($break-mobile)
     left: .8em
@@ -314,6 +318,7 @@ a, input, button, textarea, select
   top: 100%
   bottom: 0
   width: 100%
+  background: $black
   background: transparentize($black, .05)
   padding: 80px
   +font-size(40)
