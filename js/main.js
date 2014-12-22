@@ -22,7 +22,7 @@ var Portfolio = function() {
     "I have a dog named Leo",
     "I love solving problems",
     "Chrome > Firefox > Opera > Safari > IE :)",
-    "Ubuntu for development, Windows for gaming :D",    
+    "Ubuntu for development, Windows for gaming :D",
     "My favourite programming language is JavaScript",
     "Badminton is my favourite sport",
     "Thanks for reading! Smile and have an awesome day! :)",
@@ -147,7 +147,7 @@ var Portfolio = function() {
       ease: 'ease'
     }, function() {
       var span = $('<span/>', {
-        class: 'about-text'
+        'class': 'about-text'
       });
 
       $(this).find('.about-wrap').html('').append(span);
@@ -188,10 +188,10 @@ var Portfolio = function() {
         self.workArray = $('#work-container li');
 
         self.workArray.hide();
-        
+
         if(!self.checkMobile())
           self.timelineArray.hide();
-        
+
         self.setLogic();
       });
   }
@@ -239,7 +239,7 @@ var Portfolio = function() {
         timelineElIndex = index < self.workArray.length - 1 ? index + 1 : 0,
         timelineEl = $($('#timeline li')[timelineElIndex]);
 
-    if(index === self.workArray.length - 1) 
+    if(index === self.workArray.length - 1)
       next = $('#work-container li[data-work="0"]');
 
     self.next(next, timelineEl);
