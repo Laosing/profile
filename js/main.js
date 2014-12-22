@@ -124,7 +124,7 @@ var Portfolio = function() {
       top: '',
       ease: 'ease'
     }, function() {
-      $(this)
+      /*$(this)
         .find('.about-text')
         .typed({
           strings: typedArray,
@@ -133,7 +133,7 @@ var Portfolio = function() {
           contentType: 'text',
           backDelay: 2000,
           startDelay: 1000
-        });
+        });*/
 
       self.checkMobile(function() {
         $('.social').velocity('fadeIn');
@@ -361,7 +361,7 @@ portfolio.init();
 $(window).resize(function() {
   var windowHeight = $(this).height() > 450 ? $(this).height() : 450;
 
-  $('#work-container, .main, .work, .side').css('height', windowHeight);
+  $('#work-container, .main, .work, .side, .about').css('height', windowHeight);
 });
 
 $(window).resize();

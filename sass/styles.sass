@@ -323,6 +323,7 @@ a, input, button, textarea, select
   background: $black
   background: transparentize($black, .05)
   padding: 80px
+  overflow-y: auto
   +font-size(40)
   color: $white
   text-align: center
@@ -387,3 +388,53 @@ a, input, button, textarea, select
   background: #ccc
   color: #000
   padding: 0.2em 0
+
+.about-container
+  +font-size(16)
+  display: block
+  margin: 0 auto
+  width: 100%
+  max-width: 700px
+
+.about-info
+  text-align: center
+
+.about-picture
+  display: block
+  margin: 0 auto
+  width: 100px
+  height: 100px
+  background: url('../img/leo.jpg') center center no-repeat
+  +border-radius(100%)
+  +background-size(contain)
+
+.about-name
+  font-weight: lighter
+  +font-size(25)
+  margin: .5em 0 1em
+  display: block
+
+.about-details
+  li
+    width: 50%
+    padding: 0 .5em
+    list-style-type: none
+    text-align: left
+    margin: 1em 0
+    font-weight: lighter
+    +breakpoint($break-mobile)
+      width: 100%
+    &:nth-child(odd)
+      float: left
+    &:nth-child(even)
+      float: right
+    span
+      text-transform: uppercase
+      font-weight: bold
+      display: block
+      color: $white-darker
+      +font-size(11)
+    a
+      color: $white
+      &:hover
+        color: $primary
