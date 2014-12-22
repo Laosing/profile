@@ -30,14 +30,14 @@ ul, section, body
 a
   text-decoration: none
   +link-colors($black, $primary)
-  &:hover, &:focus 
+  &:hover, &:focus
     text-decoration: none
 
 a, input
   +transition(all .2s ease)
 
 a, input, button, textarea, select
-  &:active, 
+  &:active,
   &:focus
     +box-shadow(none)
     outline: none
@@ -134,7 +134,7 @@ a, input, button, textarea, select
     cursor: pointer
     @extend .animate
     &:hover
-      background: $black-light 
+      background: $black-light
     &:after
       content: ""
       display: block
@@ -212,6 +212,7 @@ a, input, button, textarea, select
   img
     width: 100%
     max-width: 800px
+    height: auto
     margin: 0 auto
   .button
     border: 1px solid $white-dark
@@ -224,7 +225,7 @@ a, input, button, textarea, select
   position: absolute
   padding: 0
   z-index: 10
-  
+
 .prev
   left: 1em
 
