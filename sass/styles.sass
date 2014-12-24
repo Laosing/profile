@@ -394,10 +394,14 @@ a, input, button, textarea, select
   margin: 0
   text-align: center
   background: $black-darker
-  color: $white
+  color: $white-dark
   padding: 2em
+  strong
+    color: $white
   a
     color: $primary
+    &:hover
+      text-decoration: underline
 
 .about-container
   +font-size(16)
