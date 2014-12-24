@@ -20,7 +20,7 @@
         "image": "lighsing.png",
         "title": "Lighsing Tech News",
         "description": "Front end design and development of a self-made project of a tech news center.",
-        "link": "/work/Lighsing",
+        "link": "http://lighsing.andrewrattana.com",
         "lightbox": false
       }
     },
@@ -32,7 +32,7 @@
         "image": "videojs.png",
         "title": "AE Phone Animations",
         "description": "Creating modern vector phone animations with After Effects and designing a minimal site platform for videos.",
-        "link": "work/VideoJS",
+        "link": "http://videojs.andrewrattana.com",
         "lightbox": false
       }
     },
@@ -44,7 +44,7 @@
         "image": "bracketsc2.png",
         "title": "BracketSC2 Microsite",
         "description": "BracketSC2 is a Starcraft 2 tournament management and hosting application that enables you to easily host tournaments without worrying about the techinical side of things.",
-        "link": "work/thesis_minisite",
+        "link": "http://bracketsc2.andrewrattana.com",
         "lightbox": false
       }
     },
@@ -56,7 +56,7 @@
         "image": "dragdrop.png",
         "title": "Todo List Application",
         "description": "A minimalistic todo list application that features drag and drop for setting priorities for your items.",
-        "link": "work/HTML5Tasks",
+        "link": "http://todolist.andrewrattana.com",
         "lightbox": false
       }
     },
