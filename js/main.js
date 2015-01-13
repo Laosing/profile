@@ -13,22 +13,6 @@ var Portfolio = function() {
       _about = $('.about'),
       _mediaMobile = '600px';
 
-  var typedArray = [
-    "Hi!^1500 Here's some fun facts about me.",
-    "My skill set includes HTML, CSS, JS, SASS, PHP... ^1000 and Photoshop, Illustrator, After Effects & Cinema 4D. :)",
-    "I'm motivated to make awesome things!",
-    "Starcraft 2 is my favourite game",
-    "Sublime Text is the best code editor!",
-    "I have a dog named Leo",
-    "I love solving problems",
-    "Chrome > Firefox > Opera > Safari > IE :)",
-    "Ubuntu for development, Windows for gaming :D",
-    "My favourite programming language is JavaScript",
-    "Badminton is my favourite sport",
-    "Thanks for reading! Smile and have an awesome day! :)",
-    ""
-  ];
-
   this.timelineArray = null;
   this.workArray = null;
   this.json = null;
@@ -124,17 +108,6 @@ var Portfolio = function() {
       top: '',
       ease: 'ease'
     }, function() {
-      /*$(this)
-        .find('.about-text')
-        .typed({
-          strings: typedArray,
-          loop: true,
-          typeSpeed: 0,
-          contentType: 'text',
-          backDelay: 2000,
-          startDelay: 1000
-        });*/
-
       self.checkMobile(function() {
         $('.social').velocity('fadeIn');
       })
