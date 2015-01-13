@@ -6,6 +6,7 @@ var Portfolio = function() {
   var self = this,
       _checkout = $('#checkout'),
       _main = $('.main'),
+      _body = $('body'),
       _work = $('.work'),
       _close = $('.close'),
       _loader = $('.load'),
@@ -104,31 +105,48 @@ var Portfolio = function() {
   }
 
   this.aboutOpen = function() {
-    _about.velocity({
-      top: '',
-      ease: 'ease'
-    }, function() {
-      self.checkMobile(function() {
-        $('.social').velocity('fadeIn');
-      })
+    overflowHide(_body);
+
+    _main.velocity({ scale: .9 }, function() {
+      _about
+        .show()
+        .velocity({ scale: 1.5 }, 0, function() {
+          $(this).velocity({
+            scale: 1,
+            opacity: 1,
+            ease: 'easeInOutCubic'
+          }, function() {
+            self.checkMobile(function() {
+              $('.social').velocity('fadeIn');
+            })
+          });
+        });
     });
   }
 
   this.aboutClose = function() {
     _about.velocity({
-      top: '100%',
-      ease: 'ease'
+      scale: 1.5,
+      ease: 'easeInOutCubic',
+      opacity: 0,
     }, function() {
+      $(this).hide();
+
       var span = $('<span/>', {
         'class': 'about-text'
       });
 
       $(this).find('.about-wrap').html('').append(span);
+
+      overflowShow(_body);
     });
+
+    _main.velocity({ scale: 1 });
 
     self.checkMobile(function() {
       $('.social').velocity('fadeOut');
     })
+
   }
 
   this.checkMobile = function(cb) {
@@ -326,6 +344,15 @@ var Portfolio = function() {
       });
     });
   }
+
+  function overflowHide(el) {
+    el.css({ overflow: 'hidden' });
+  }
+
+  function overflowShow(el) {
+    el.css({ overflow: '' });
+  }
+
 };
 
 var portfolio = new Portfolio();
