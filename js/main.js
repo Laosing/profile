@@ -106,7 +106,7 @@ var Portfolio = function() {
   }
 
   this.aboutOpen = function() {
-    overflowHide([_body, _about]);
+    setOverflow(true, [_body, _about]);
     _side.velocity({ opacity: 1 }, { display: 'none', duration: 0 });
     _body.velocity({ backgroundColor: '#FF3C1F' });
 
@@ -117,7 +117,7 @@ var Portfolio = function() {
             scale: 1,
             opacity: 1,
           }, 'easeInOutCubic', function() {
-            overflowShow(_about);
+            setOverflow(false, _about);
 
             self.checkMobile(function() {
               $('.social').velocity('fadeIn');
@@ -128,7 +128,7 @@ var Portfolio = function() {
   }
 
   this.aboutClose = function() {
-    overflowHide([_body, _about]);
+    setOverflow(true, [_body, _about]);
     _body.velocity({ backgroundColor: '#222' });
 
     _about.velocity({
@@ -347,23 +347,15 @@ var Portfolio = function() {
     });
   }
 
-  function overflowHide(el) {
-    if(el.length > 1) {
-      $(el).each(function(i, value) {
-        value.css({ overflow: 'hidden' });
-      });
-    } else {
-      el.css({ overflow: 'hidden' });
-    }
-  }
+  function setOverflow(prop, el) {
+    var prop = prop ? 'hidden' : '';
 
-  function overflowShow(el) {
     if(el.length > 1) {
-      $(el).each(function(i, value) {
-        value.css({ overflow: '' });
+      $(el).each(function(i, val) {
+        val.css({ overflow: prop });
       });
     } else {
-      el.css({ overflow: '' });
+      $(el).css({ overflow: prop });
     }
   }
 
