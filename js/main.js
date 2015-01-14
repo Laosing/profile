@@ -9,6 +9,7 @@ var Portfolio = function() {
       _body = $('body'),
       _work = $('.work'),
       _close = $('.close'),
+      _side = $('.side'),
       _loader = $('.load'),
       _helper = $('.helper'),
       _about = $('.about'),
@@ -105,17 +106,19 @@ var Portfolio = function() {
   }
 
   this.aboutOpen = function() {
-    overflowHide(_body);
+    overflowHide([_body, _about]);
+    _side.velocity({ opacity: 1 }, { display: 'none', duration: 0 });
+    _body.velocity({ backgroundColor: '#FF3C1F' });
 
     _main.velocity({ scale: .9 }, function() {
-      _about
-        .show()
+      _about.show()
         .velocity({ scale: 1.5 }, 0, function() {
           $(this).velocity({
             scale: 1,
             opacity: 1,
-            ease: 'easeInOutCubic'
-          }, function() {
+          }, 'easeInOutCubic', function() {
+            overflowShow(_about);
+
             self.checkMobile(function() {
               $('.social').velocity('fadeIn');
             })
@@ -125,23 +128,22 @@ var Portfolio = function() {
   }
 
   this.aboutClose = function() {
+    overflowHide([_body, _about]);
+    _body.velocity({ backgroundColor: '#222' });
+
     _about.velocity({
       scale: 1.5,
-      ease: 'easeInOutCubic',
       opacity: 0,
-    }, function() {
-      $(this).hide();
-
-      var span = $('<span/>', {
-        'class': 'about-text'
-      });
-
-      $(this).find('.about-wrap').html('').append(span);
-
-      overflowShow(_body);
+    }, {
+      easing: 'easeInOutCubic',
+      display: 'none',
+      complete: function() {
+        _main.velocity({ scale: 1 }, 'ease', function() {
+          _side.velocity({ opacity: 1 }, { display: 'block' });
+          _body.removeAttr('style');
+        });
+      }
     });
-
-    _main.velocity({ scale: 1 });
 
     self.checkMobile(function() {
       $('.social').velocity('fadeOut');
@@ -346,11 +348,23 @@ var Portfolio = function() {
   }
 
   function overflowHide(el) {
-    el.css({ overflow: 'hidden' });
+    if(el.length > 1) {
+      $(el).each(function(i, value) {
+        value.css({ overflow: 'hidden' });
+      });
+    } else {
+      el.css({ overflow: 'hidden' });
+    }
   }
 
   function overflowShow(el) {
-    el.css({ overflow: '' });
+    if(el.length > 1) {
+      $(el).each(function(i, value) {
+        value.css({ overflow: '' });
+      });
+    } else {
+      el.css({ overflow: '' });
+    }
   }
 
 };
