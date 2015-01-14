@@ -32,7 +32,7 @@ ul, section, body
 
 a
   text-decoration: none
-  +link-colors($black, $primary)
+  +link-colors($white, $primary)
   &:hover, &:focus
     text-decoration: none
 
@@ -99,6 +99,8 @@ a, input, button, textarea, select
   +breakpoint($break-mobile)
     overflow-x: hidden
     width: 100%
+  a
+    color: $black-light
 
 .intro
   padding: 2em
@@ -251,6 +253,7 @@ a, input, button, textarea, select
   position: absolute
   right: 15px
   top: 0
+  color: $black-light
   background: $white-lighter
   z-index: 30
   display: none
@@ -306,7 +309,19 @@ a, input, button, textarea, select
     background: $white
     color: $black
 
+.about-me-details
+  font-weight: lighter
+  a
+    color: $primary
+    &:hover
+      color: $primary-lighter
+
+.about-h3
+  font-weight: lighter
+  margin-top: 2em
+
 #checkout
+  color: $black-light
   +breakpoint($break-mobile)
     margin-top: 1em
     width: auto
