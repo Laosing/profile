@@ -1,15 +1,21 @@
 .element-invisible
-  position: absolute !important
-  height: 1px 
-  width: 1px 
+  border: 0
+  clip: rect(0 0 0 0)
+  height: 1px
+  margin: -1px
   overflow: hidden
-  clip: rect(1px 1px 1px 1px)
-  clip: rect(1px, 1px, 1px, 1px)
+  padding: 0
+  position: absolute
+  width: 1px
 
 .element-invisible.element-focusable:active,
 .element-invisible.element-focusable:focus
-  position: static !important
   clip: auto
+  height: auto
+  margin: 0
+  overflow: visible
+  position: static
+  width: auto
 
 .animate
   +transition(all .2s ease)
