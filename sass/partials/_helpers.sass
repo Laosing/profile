@@ -14,7 +14,7 @@
   height: auto
   margin: 0
   overflow: visible
-  position: static
+  position: static: 
   width: auto
 
 .animate
@@ -49,19 +49,6 @@
 
 .hidden
   display: none !important
-
-.typed-cursor
-  opacity: 1
-  color: $white
-  +animation(blink 0.7s infinite)
-
-+keyframes(blink)
-  0%
-    opacity: 1 
-  50%
-    opacity: 0 
-  100%
-    opacity: 1 
 
 .button
   +inline-block()
