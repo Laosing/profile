@@ -80,8 +80,8 @@
         "image": "cows.jpg",
         "title": "The Cow Warriors",
         "description": "A logo I designed for my team of 4 in a fierce corporate battle royale. These were printed on t-shirts and the title remained as Attack of the Retreating Invisible Cows!",
-        "link": "img/cow-large.jpg",
-        "lightbox": true
+        "link": "",
+        "lightbox": false
       }
     },
     {
