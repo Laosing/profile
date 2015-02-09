@@ -108,6 +108,14 @@ var Portfolio = function() {
 
   this.aboutOpen = function() {
     setOverflow(true, [_body, _about]);
+
+    if(this.checkMobile()) {
+      _about.velocity('fadeIn', function() {
+        setOverflow(false, $(this));
+      });
+      return;
+    }
+
     _side.velocity({ opacity: 1 }, { display: 'none', duration: 0 });
     _body.velocity({ backgroundColor: '#FF3C1F' });
 
@@ -119,10 +127,6 @@ var Portfolio = function() {
             opacity: 1,
           }, 'easeInOutCubic', function() {
             setOverflow(false, _about);
-
-            self.checkMobile(function() {
-              $('.social').velocity('fadeIn');
-            })
           });
         });
     });
@@ -130,6 +134,14 @@ var Portfolio = function() {
 
   this.aboutClose = function() {
     setOverflow(true, [_body, _about]);
+
+    if(this.checkMobile()) {
+      _about.velocity('fadeOut', function() {
+        _body.removeAttr('style');
+      });
+      return;
+    }
+
     _body.velocity({ backgroundColor: '#222' });
 
     _about.velocity({
@@ -145,11 +157,6 @@ var Portfolio = function() {
         });
       }
     });
-
-    self.checkMobile(function() {
-      $('.social').velocity('fadeOut');
-    })
-
   }
 
   this.checkMobile = function(cb) {
