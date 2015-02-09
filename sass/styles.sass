@@ -193,16 +193,6 @@ p
     border: 1px solid $primary
     +box-shadow(0 0 0 2px $black-dark)
     z-index: 10
-  &.web:before
-    border-color: $blue
-  &.design:before
-    border-color: $yellow
-  &.print:before
-    border-color: $teal
-  &.animation:before
-    border-color: $purple
-  &.industrial:before
-    border-color: $primary
 
 .desc
   margin: 1em 1em 0
@@ -303,6 +293,26 @@ p
 
 .lt-ie9 .load
   background: url('../img/loader.gif') center center no-repeat
+
+.legend
+  +inline-block
+  list-style: none
+  color: white
+  position: absolute
+  right: 4em
+  top: 30%
+  line-height: 2
+  z-index: 1
+  li:before
+    content: ''
+    +inline-block
+    margin-right: 10px
+    width: 12px
+    height: 12px
+    background: transparent
+    border-width: 1px
+    border-style: solid
+    +border-radius(50%)
 
 .helper
   position: absolute
@@ -502,3 +512,19 @@ p
       border-bottom: 1px dotted $primary-darker
       &:hover
         color: $primary
+
+/* Color Labels
+   ----------------------------- */
+
+.web:before
+  border-color: $blue
+.design:before
+  border-color: $yellow
+.print:before
+  border-color: $teal
+.animation:before
+  border-color: $purple
+.industrial:before
+  border-color: $primary
+.none:before
+  border-color: $white

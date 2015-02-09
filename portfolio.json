@@ -3,7 +3,7 @@
     {
       "timeline": {
         "description": "Welcome to my site",
-        "type": ""
+        "type": "none"
       },
       "modal": {
         "image": "3-dark.jpg",
