@@ -20,20 +20,12 @@
 .animate
   +transition(all .2s ease)
 
-=font-size($sizeValue: 1.6)
+=font-size($sizeValue: 16)
   font-size: ($sizeValue) + px
   font-size: ($sizeValue / 10) + rem
 
-.cf:before,
-.cf:after
-  content: " "
-  display: table
-
-.cf:after
-  clear: both
-
-.clearfix:after
-  font-size: 0
+.clearfix
+  +pie-clearfix()
 
 .tac
   text-align: center
