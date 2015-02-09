@@ -110,9 +110,11 @@ var Portfolio = function() {
     setOverflow(true, [_body, _about]);
 
     if(this.checkMobile()) {
-      _about.velocity('fadeIn', function() {
-        setOverflow(false, $(this));
-      });
+      _about
+        .velocity({ 'scale': 1 }, 0)
+        .velocity('fadeIn', function() {
+          setOverflow(false, $(this));
+        });
       return;
     }
 
