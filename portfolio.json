@@ -2,7 +2,8 @@
   "work": [
     {
       "timeline": {
-        "description": "Welcome to my site"
+        "description": "Welcome to my site",
+        "type": ""
       },
       "modal": {
         "image": "3-dark.jpg",
@@ -14,7 +15,8 @@
     },
     {
       "timeline": {
-        "description": "Offering only the best tech news and reviews!"
+        "description": "Offering only the best tech news and reviews!",
+        "type": "web"
       },
       "modal": {
         "image": "lighsing.png",
@@ -26,7 +28,8 @@
     },
     {
       "timeline": {
-        "description": "After Effects animations with front end design!"
+        "description": "After Effects animations with front end design!",
+        "type": "web"
       },
       "modal": {
         "image": "videojs.png",
@@ -38,7 +41,8 @@
     },
     {
       "timeline": {
-        "description": "A tournament management and hosting application microsite."
+        "description": "A tournament management and hosting application microsite.",
+        "type": "web"
       },
       "modal": {
         "image": "bracketsc2.png",
@@ -50,7 +54,8 @@
     },
     {
       "timeline": {
-        "description": "HTML5 Minimal todo list."
+        "description": "HTML5 Minimal todo list.",
+        "type": "web"
       },
       "modal": {
         "image": "dragdrop.png",
@@ -62,7 +67,8 @@
     },
     {
       "timeline": {
-        "description": "Get the latest news, trends and happenings in music!"
+        "description": "Get the latest news, trends and happenings in music!",
+        "type": "design"
       },
       "modal": {
         "image": "musicsite.jpg",
@@ -74,7 +80,8 @@
     },
     {
       "timeline": {
-        "description": "Attack of the retreating invisible cows!"
+        "description": "Attack of the retreating invisible cows!",
+        "type": "design"
       },
       "modal": {
         "image": "cows.jpg",
@@ -86,7 +93,8 @@
     },
     {
       "timeline": {
-        "description": "Theme: Radiating Colours"
+        "description": "Theme: Radiating Colours",
+        "type": "design"
       },
       "modal": {
         "image": "book1.jpg",
@@ -98,7 +106,8 @@
     },
     {
       "timeline": {
-        "description": "Theme: Mobile Apps"
+        "description": "Theme: Mobile Apps",
+        "type": "design"
       },
       "modal": {
         "image": "book2.jpg",
@@ -110,7 +119,8 @@
     },
     {
       "timeline": {
-        "description": "Theme: Game On"
+        "description": "Theme: Game On",
+        "type": "design"
       },
       "modal": {
         "image": "book3.jpg",
@@ -122,19 +132,21 @@
     },
     {
       "timeline": {
-        "description": "A report cover page about user application data and statistics"
+        "description": "A report cover page about user application data and statistics",
+        "type": "design"
       },
       "modal": {
         "image": "enduser.jpg",
         "title": "End User Report",
-        "description": "The cover page for a report I designed for <a href='http://www.infotech.com'>Info-Tech Research Group</a> for corporations to measure how well they're users are managing applications",
+        "description": "The cover page for a report I designed for <a href='http://www.infotech.com'>Info-Tech Research Group</a> for corporations to measure how well their users are managing applications",
         "link": "img/enduser-large.jpg",
         "lightbox": true
       }
     },
     {
       "timeline": {
-        "description": "The future of car HUDs?"
+        "description": "The future of car HUDs?",
+        "type": "design"
       },
       "modal": {
         "image": "hud.png",
@@ -146,7 +158,8 @@
     },
     {
       "timeline": {
-        "description": "A modern and minimalistic music player."
+        "description": "A modern and minimalistic music player.",
+        "type": "design"
       },
       "modal": {
         "image": "music.jpg",
@@ -158,7 +171,8 @@
     },
     {
       "timeline": {
-        "description": "A super minimalistic media player."
+        "description": "A super minimalistic media player.",
+        "type": "design"
       },
       "modal": {
         "image": "movie.jpg",
