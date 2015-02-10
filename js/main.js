@@ -172,7 +172,7 @@ var Portfolio = function() {
   }
 
   this.setHtml = function() {
-    $.getJSON('portfolio.json')
+    $.getJSON('./data/portfolio.json')
       .done(function(data) {
         self.json = data;
 
