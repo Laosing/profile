@@ -294,15 +294,32 @@ p
 .lt-ie9 .load
   background: url('../img/loader.gif') center center no-repeat
 
+.helper
+  position: absolute
+  right: 2em
+  top: 20%
+  z-index: 5
+
+.helper-note
+  display: block
+  padding: 10px 10px 10px 1em
+  background: $white
+  +border-radius(50px)
+  +breakpoint($break-mobile)
+    display: none
+  span
+    background: $primary
+    color: $white
+    padding: 7px 8px
+    border-radius: 100%
+    margin-left: .5em
+
 .legend
   +inline-block
+  margin: .5em 0 0 1em
   list-style: none
   color: white
-  position: absolute
-  right: 4em
-  top: 30%
   line-height: 2
-  z-index: 1
   li:before
     content: ''
     +inline-block
@@ -313,26 +330,6 @@ p
     border-width: 1px
     border-style: solid
     +border-radius(50%)
-
-.helper
-  position: absolute
-  right: 2em
-  top: 20%
-  display: block
-  padding: 10px 2.7em 10px 1em
-  background: $white
-  z-index: 5
-  +border-radius(50px)
-  +breakpoint($break-mobile)
-    display: none
-  span
-    background: $primary
-    color: $white
-    padding: 7px 8px
-    border-radius: 100%
-    position: absolute
-    top: 0.3em
-    right: 0.3em
 
 .about-me
   margin-right: 1em

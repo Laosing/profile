@@ -12,7 +12,6 @@ var Portfolio = function() {
       _side = $('.side'),
       _loader = $('.load'),
       _helper = $('.helper'),
-      _legend = $('.legend'),
       _about = $('.about'),
       _mediaMobile = '600px';
 
@@ -97,7 +96,7 @@ var Portfolio = function() {
           .hide();
 
         $('.active').removeClass('active');
-        _helper.add(_legend).removeAttr('style');
+        _helper.removeAttr('style');
 
         _work.removeClass('open');
       });
@@ -254,7 +253,7 @@ var Portfolio = function() {
     } else if($('.active').length) {
       this.next(el, timelineEl);
     } else {
-      _helper.add(_legend).velocity('fadeOut', 'fast', function() {
+      _helper.velocity('fadeOut', 'fast', function() {
         self.show(el, timelineEl);
       });
     }
